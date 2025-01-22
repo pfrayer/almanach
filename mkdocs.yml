@@ -25,7 +25,8 @@ nav:
   - SSL / TLS: docs/compute/ssl.md
   - whois: docs/compute/whois.md
 - Cooking (🇫🇷):
-  - Sucré: docs/cook/sucre.md
+  - Sucré:
+    - Granola: docs/cook/granola.md
   - Salé: docs/cook/sale.md
 
 theme:
