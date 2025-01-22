@@ -1,0 +1,58 @@
+/*
+  Override variables for code-block highlighting in both modes.
+*/
+
+:root > * {
+    --md-code-bg-color-block: #283142
+}
+
+.highlight {
+    --md-hue: 232;
+    --md-code-fg-color: #eceff1;
+    --md-code-bg-color: var(--md-code-bg-color-block);
+    --md-code-hl-color: rgba(66, 135, 255, 0.15);
+    --md-code-hl-number-color: #fbc02d;
+    --md-code-hl-special-color: #78d9ec;
+    --md-code-hl-function-color: #d7aefb;
+    --md-code-hl-constant-color: #d7aefb;
+    --md-code-hl-keyword-color: #78d9ec;
+    --md-code-hl-string-color: #9ccc65;
+    --md-code-hl-name-color: #d7aefb;
+    --md-code-hl-operator-color: #78d9ec;
+    --md-code-hl-punctuation-color: #eceff1;
+    --md-code-hl-comment-color: #ff8bcb;
+    --md-code-hl-generic-color: #eceff1;
+    --md-code-hl-variable-color: #ff8bcb;
+    --md-default-fg-color--light: hsla(var(--md-hue), 75%, 90%, 0.62);
+    --md-default-fg-color--lighter: hsla(var(--md-hue), 75%, 90%, 0.32);
+    --md-default-fg-color--lightest: hsla(var(--md-hue), 75%, 90%, 0.12);
+}
+
+.highlight code {
+    border-radius: 0;
+    white-space : pre-wrap !important;
+}
+
+[data-md-color-scheme=slate] > * {
+    --md-code-bg-color-block: hsla(var(--md-hue), 20%, 18%, 1) !important;
+}
+
+.highlight .l {
+    color: #eceff1;
+}
+
+* > code {
+    font-weight: 400;
+}
+
+.highlight code {
+    font-weight: 400 !important;
+}
+
+.md-annotation__index > span {
+    vertical-align: middle;
+}
+
+.md-tooltip__inner.md-typeset {
+    font-size: 1em;
+}

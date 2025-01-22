@@ -1,0 +1,96 @@
+site_name: Compute & Cook
+site_url: https://almanach.pateenchroot.ovh
+site_description: Computers & Cooking cheatsheets
+
+repo_name: pfayer/almanach
+repo_url: https://github.com/pfrayer/pateenchroot
+edit_uri: https://github.com/pfrayer/pateenchroot/tree/master/almanach/src/docs/
+
+docs_dir: src
+site_dir: site
+
+nav:
+- Computers (🇬🇧):
+  - AWS S3 CLI: docs/compute/aws_s3_cli.md
+  - Bash: docs/compute/bash.md
+  - Debian: docs/compute/debian.md
+  - Docker: docs/compute/docker.md
+  - Git: docs/compute/git.md
+  - Images, videos, PDF: docs/compute/images.md
+  - Kubernetes: docs/compute/kubernetes.md
+  - Logs: docs/compute/logs.md
+  - MongoDB: docs/compute/mongodb.md
+  - PGP / GPG: docs/compute/pgp.md
+  - Python: docs/compute/python.md
+  - SSL / TLS: docs/compute/ssl.md
+  - whois: docs/compute/whois.md
+- Cooking (🇫🇷):
+  - Sucré: docs/cook/sucre.md
+  - Salé: docs/cook/sale.md
+
+theme:
+  name: material
+  logo: assets/images/favicon.png
+  palette:
+    primary: orange
+    accent: amber
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: en
+  features:
+  - announce.dismiss
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - content.code.select
+  - navigation.expand
+  - navigation.indexes
+  - navigation.instant
+  - navigation.sections
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.tracking
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+- search
+- git-revision-date-localized:
+    type: datetime
+    fallback_to_build_date: true
+- minify:
+    minify_html: true
+    htmlmin_opts:
+      remove_comments: true
+
+extra_css:
+- assets/css/fonts.css
+- assets/css/extra.css
+- assets/css/code.css
+
+markdown_extensions:
+- abbr
+- admonition
+- attr_list
+- def_list
+- md_in_html
+- pymdownx.details
+- pymdownx.highlight:
+    use_pygments: true
+    linenums: true
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.smartsymbols
+- pymdownx.snippets:
+    check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
