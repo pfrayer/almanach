@@ -3,8 +3,8 @@ site_url: https://almanach.pateenchroot.ovh
 site_description: Computers & Cooking cheatsheets
 
 repo_name: pfayer/almanach
-repo_url: https://github.com/pfrayer/pateenchroot
-edit_uri: https://github.com/pfrayer/pateenchroot/tree/master/almanach/src/docs/
+repo_url: https://github.com/pfrayer/almanach
+edit_uri: https://github.com/pfrayer/almanach/tree/master/src/
 
 docs_dir: src
 site_dir: site
