@@ -17,7 +17,7 @@ hide:
           <a href="docs/compute/bash/" title="Code" class="md-button md-button--primary">
             Computer
           </a>
-          <a href="docs/cook/sucre/" title="Cook" class="md-button md-button--primary">
+          <a href="docs/cook/granola/" title="Cook" class="md-button md-button--primary">
             Cook
           </a>
         </div>
