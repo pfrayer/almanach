@@ -103,3 +103,14 @@ $ pyenv uninstall my-project
 $ cd $(pyenv root)
 $ git pull
 ```
+
+## List
+
+### Sort list of dict based on a dict's key
+
+```python
+my_unsorted_list = [ {"name": "Julien", "age": 12}, {"name": "Xavier", "age": 20}, {"name": "Alex", "age": 43}]
+sorted(my_unsorted_list, key=lambda d: d["name"])
+# Output
+# [{'name': 'Alex', 'age': 43}, {'name': 'Julien', 'age': 12}, {'name': 'Xavier', 'age': 20}]
+```
