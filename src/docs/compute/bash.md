@@ -1,5 +1,21 @@
 # Bash
 
+## `cat EOF` syntax
+
+```shell
+$ cat <<EOF > script.sh
+#!/usr/bin/env bash
+echo \$PWD
+echo $PWD
+EOF
+```
+`script.sh` content will be:
+```bash
+#!/usr/bin/env bash
+echo $PWD
+echo /home/user
+```
+
 ## Replace line breaks with `\n` in bash
 
 ```shell
