@@ -114,3 +114,44 @@ sorted(my_unsorted_list, key=lambda d: d["name"])
 # Output
 # [{'name': 'Alex', 'age': 43}, {'name': 'Julien', 'age': 12}, {'name': 'Xavier', 'age': 20}]
 ```
+
+## Archives
+
+Create a `.tar.gz` archive. Let say you have this source folder structure:
+```
+.
+└── source-dir
+    ├── file1
+    ├── file2
+    └── file3
+```
+Then:
+```python
+import tarfile
+
+with tarfile.open(f"source-dir.tgz", "w:gz") as tar:
+    tar.add("source-dir")
+```
+Will create a `source-dir.tgz` archive containing the exact same structure (keeping the `source-dir`):
+
+To only add files to the archives (without keeping `source-dir`):
+```python
+import os
+import tarfile
+
+with tarfile.open(f"source-dir.tgz", "w:gz") as tar:
+    for filename in os.listdir("source-dir"):
+        tar.add(
+            os.path.join("source-dir", filename), # source file path
+            arcname=filename,                     # name of the file in the archive
+            recursive=False,                      # should we keep the source structure, aka keep "source-dir/filename" ?
+        )
+```
+Will create a `source-dir.tgz` archive with this structure:
+```
+.
+├── file1
+├── file2
+└── file3
+```
+Other compression algorithms are supported (`bz2`, `lzma` etc). [Official doc](https://docs.python.org/fr/3.13/library/archiving.html){target=_blank}
