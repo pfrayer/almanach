@@ -12,4 +12,4 @@ route:          5.83.153.0/24
 ...
 ```
 
-[Source](https://man.ilayk.com/man/whois/)
+[Source](https://man.ilayk.com/man/whois/){target=_blank}
