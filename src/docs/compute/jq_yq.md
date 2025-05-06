@@ -99,9 +99,34 @@ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '. + [{"foo": "ne
 ]
 ```
 
+## Useful aliases
+
+Flatten YAML:
+```shell
+$ alias flatten_yaml='yq -y '\''[tostream | select(has(1)) | first |= join(".") | {key: first, value: last}]| from_entries'\'
+
+$ cat file.yaml
+image:
+  repository: prom/prom-kpi
+  pullPolicy: IfNotPresent
+  tag: ""
+imagePullSecrets: []
+replicaCount: 1
+...
+
+$ flatten_yaml file.yaml
+image.repository: prom/prom-kpi
+image.pullPolicy: IfNotPresent
+image.tag: ''
+imagePullSecrets: []
+replicaCount: 1
+...
+```
+
+
 ## Note about `yq` and `yq`
 
 There are **two distincts** `yq` packages:
 
-- https://github.com/mikefarah/yq
-- https://github.com/kislyuk/yq
+- [https://github.com/mikefarah/yq](https://github.com/mikefarah/yq){target=_blank}
+- [https://github.com/kislyuk/yq](https://github.com/kislyuk/yq){target=_blank}
