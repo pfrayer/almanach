@@ -13,6 +13,7 @@ nav:
 - Computers (🇬🇧):
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
   - Bash: docs/compute/bash.md
+  - DNS: docs/compute/dns.md
   - Debian: docs/compute/debian.md
   - Docker: docs/compute/docker.md
   - Git: docs/compute/git.md
