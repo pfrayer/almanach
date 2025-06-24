@@ -1,13 +1,15 @@
 # TLS & SSL
 
+## Mozilla SL Configuration Generator
+
+[https://ssl-config.mozilla.org/](https://ssl-config.mozilla.org/){target=_blank}
+
 ## Display the contents of a SSL certificate
 
 ### For a local file certificate file
 
 ```shell
 $ openssl x509 -in /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt  -text
-```
-```
 Certificate:
     Data:
         Version: 3 (0x2)
