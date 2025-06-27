@@ -8,10 +8,12 @@ $ echo '{"foo": "bar"}' | jq .
   "foo": "bar"
 }
 ```
+
 ```shell
 $ echo '{"foo": "bar"}' | jq '.foo'
 "bar"
 ```
+
 ```shell
 $ echo '{"foo": "bar"}' | jq -r '.foo'
 bar
@@ -31,6 +33,7 @@ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq .
   }
 ]
 ```
+
 ```shell
 $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[]'
 {
@@ -43,21 +46,43 @@ $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[]'
   "foo": "kowabunga"
 }
 ```
+
 ```shell
 $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[0]'
 {
   "foo": "bar"
 }
 ```
+
 ```shell
 $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[2]'
 {
   "foo": "kowabunga"
 }
 ```
+
 ```shell
 $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[2].foo'
 "kowabunga
+```
+
+## Select
+
+Find in array:
+
+Find based on key ("in this array, print the ID of the user "bob"):
+
+```shell
+$ echo '[ {"id": 1, "name": "alice"}, {"id": 2, "name": "bob"} ]' | jq '.[] | select(.name == "bob") | .id'
+2
+```
+
+Find based on key in array ("in this array, print the ID of all dict having `alice` in its users"):
+
+```shell
+$ echo '[ {"id": 1, "users": ["alice", "bob"]}, {"id": 2, "users": ["alice"]}, {"id": 3, "users": ["bob"]} ]' | jq '.[] | select(.users[] | contains("alice")) | .id'
+1
+2
 ```
 
 ## Append
@@ -71,7 +96,9 @@ $ echo '{"foo": "kowabunga"}' | jq '. + {"bar": "new item"}'
   "bar": "new item"
 }
 ```
+
 It can override existing keys:
+
 ```shell
 echo '{"foo": "kowabunga"}' | jq '. + {"foo": "new item"}'
 {
@@ -102,6 +129,7 @@ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '. + [{"foo": "ne
 ## Useful aliases
 
 Flatten YAML:
+
 ```shell
 $ alias flatten_yaml='yq -y '\''[tostream | select(has(1)) | first |= join(".") | {key: first, value: last}]| from_entries'\'
 
@@ -122,7 +150,6 @@ imagePullSecrets: []
 replicaCount: 1
 ...
 ```
-
 
 ## Note about `yq` and `yq`
 
