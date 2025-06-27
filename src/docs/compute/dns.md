@@ -1,5 +1,20 @@
 # DNS
 
+## `nslookup`
+
+Search a given record for a given domain:
+
+```shell
+$ nslookup -type=[record type] [domain]
+$ nslookup -type=A
+Server:     10.15.25.129
+Address:    10.15.25.129#53
+
+Non-authoritative answer:
+Name:    almanach.pateenchroot.ovh
+Address: 54.36.98.105
+```
+
 ## `dig`
 
 Basics:
