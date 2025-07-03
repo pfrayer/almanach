@@ -29,6 +29,8 @@ nav:
 - Cooking (🇫🇷):
   - Sucré:
     - Granola: docs/cook/granola.md
+    - Tiramisu: docs/cook/tiramisu.md
+    - Brownie: docs/cook/brownie.md
   - Salé: docs/cook/sale.md
 
 theme:
