@@ -155,3 +155,13 @@ Will create a `source-dir.tgz` archive with this structure:
 └── file3
 ```
 Other compression algorithms are supported (`bz2`, `lzma` etc). [Official doc](https://docs.python.org/fr/3.13/library/archiving.html){target=_blank}
+
+## Select random item in a list
+
+```python
+import random
+
+my_list = [1, 2, 3, 4]
+random.choice(my_list)
+# 2
+```
