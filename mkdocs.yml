@@ -32,7 +32,8 @@ nav:
     - Granola: docs/cook/granola.md
     - Tiramisu: docs/cook/tiramisu.md
     - Brownie: docs/cook/brownie.md
-  - Salé: docs/cook/sale.md
+  - Salé:
+    - Pâtes: docs/cook/pate.md
 
 theme:
   name: material

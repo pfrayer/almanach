@@ -235,14 +235,10 @@
 
   @media screen and (max-width: 76.234375em) {
     .md-nav--primary,
-    .md-nav--primary .md-nav {
-      background-color: hsla(0, 0%, 0%, 0.8);
-    }
   }
 
   @media screen and (max-width: 76.234375em) {
     .md-nav--primary .md-nav__title ~ .md-nav__list {
-      background-color: hsla(0, 0%, 0%, 0.8);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
@@ -250,13 +246,11 @@
 
   @media screen and (max-width: 76.234375em) {
     .md-nav--primary .md-nav__title {
-      background-color: hsla(0, 0%, 0%, 0.8);
       backdrop-filter: blur(16px);
     }
   }
 
   .md-search__scrollwrap {
-    background-color: hsla(0, 0%, 0%, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
