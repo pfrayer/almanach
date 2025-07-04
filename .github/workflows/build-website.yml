@@ -1,17 +1,13 @@
-name: Deploy to master
-
+name: Deploy on merge on master
 on:
   push:
     branches:
     - master
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Deploy
+    - name: Deploy to prod
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SSH_HOST: ${{ secrets.SSH_HOST }}

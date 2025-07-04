@@ -25,6 +25,7 @@ nav:
   - PGP / GPG: docs/compute/pgp.md
   - Python: docs/compute/python.md
   - SSL / TLS: docs/compute/ssl.md
+  - SSH: docs/compute/ssh.md
   - whois: docs/compute/whois.md
 - Cooking (🇫🇷):
   - Sucré:
