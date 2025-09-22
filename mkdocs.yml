@@ -34,6 +34,7 @@ nav:
     - Brownie: docs/cook/brownie.md
   - Salé:
     - Pâtes: docs/cook/pate.md
+    - Moussaka: docs/cook/moussaka.md
 
 theme:
   name: material
