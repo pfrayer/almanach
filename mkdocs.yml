@@ -35,6 +35,7 @@ nav:
   - Salé:
     - Pâtes: docs/cook/pate.md
     - Moussaka: docs/cook/moussaka.md
+    - Sans gluten: docs/cook/no_gluten.md
 
 theme:
   name: material
