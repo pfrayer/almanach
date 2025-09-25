@@ -2,26 +2,28 @@
 
 ## Ingrédients
 
-- 2/3 aubergines
-- 6 petites pommes de terre
-- 500g de viande haché (bœuf, ou veau, ou porc)
-- 200g de pulpe de tomates
-- 1 cuillerée à soupe de concentré de tomates
-- 1 verre de vin rouge
-- 50cl de bouillon de boeuf ou de veau
-- 1 cuillerée à café de sucre
-- 1 oignon
-- 2 gousses d’ail
-- Huile d’olive
-- Sel & poivre
-- Noix de muscade
-- 2 feuilles de laurier
-- Piment d'espelette en poudre
-- 2 jaunes d’oeuf
-- 70g de beurre
-- 70g de farine
-- 1l de lait entier
-- 300g d’Ossau-iraty
+| Ingrédient | Quantité |
+|------------|----------|
+| aubergines | 2/3 |
+| petites pommes de terre | 6 |
+| viande hachée (bœuf, veau ou porc) | 500 g |
+| pulpe de tomates | 200 g |
+| concentré de tomates | 1 cuillère à soupe |
+| vin rouge | 1 verre |
+| bouillon de bœuf ou de veau | 50 cl |
+| sucre | 1 cuillère à café |
+| oignon | 1 |
+| gousses d’ail | 2 |
+| huile d’olive | - |
+| sel & poivre | - |
+| noix de muscade | - |
+| feuilles de laurier | 2 |
+| piment d’Espelette en poudre | 2 cuillère à café |
+| jaunes d’œuf | 2 |
+| beurre | 70 g |
+| farine | 70 g |
+| lait entier | 1 l |
+| Ossau‑Iraty | 300 g |
 
 ## Étapes
 

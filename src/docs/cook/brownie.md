@@ -2,15 +2,18 @@
 
 ## Ingrédients
 
-- 150 g de sucre
-- 150 g de farine
-- 100 g de beurre
-- 50 g d'huile de noisette (ou de noix)
-- 1 c. à café d'extrait de vanille
-- 2 oeufs
-- 200 g de chocolat noir à pâtisser
-- 1 pincée de bicarbonate et 1 pincée de sel
-- 100 g de fruits secs (noix de pécan, noisettes ou noix)
+| Ingrédient | Quantité |
+|------------|----------|
+| sucre | 150 g |
+| farine | 150 g |
+| beurre | 100 g |
+| huile de noisette (ou de noix) | 50 g |
+| extrait de vanille | 1 c. à café |
+| œufs | 2 |
+| chocolat noir à pâtisser | 200 g |
+| bicarbonate | 1 pincée |
+| sel | 1 pincée |
+| fruits secs (noix de pécan, noisettes ou noix) | 100 g |
 
 ## Étapes
 

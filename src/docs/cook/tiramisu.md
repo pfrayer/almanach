@@ -2,14 +2,16 @@
 
 ## Ingrédients
 
-- 250 g de mascarpone
-- 30 boudoir / biscuits cuillère
-- 100 g de sucre
-- 4 oeufs
-- 1 café allongé froid (un bon bol)
-- 1 gousse de vanille
-- 2 cuil. à soupe de sucre glace
-- 2 cuil. à soupe de cacao en poudre non sucré
+| Ingrédient                               | Quantité                           |
+|------------------------------------------|------------------------------------|
+| Mascarpone                               | 250 g                              |
+| Boudoir / biscuits cuillère              | 30                                 |
+| Sucre                                    | 100 g                              |
+| Œufs                                     | 4                                  |
+| Café allongé froid (un bon bol)          | 1                                  |
+| Gousse de vanille                        | 1                                  |
+| Sucre glace                              | 2 cuil. à soupe                    |
+| Cacao en poudre non sucré                | 2 cuil. à soupe                    |
 
 ## Étapes
 

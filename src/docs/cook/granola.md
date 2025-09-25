@@ -2,13 +2,15 @@
 
 ## Ingrédients
 
-- 160g d'huile (colza ou tournesol)
-- 320g de miel liquide
-- 2 cuillerée à soupe de lait
-- 500g de flocons d'avoine
-- 100g de noix coco rapée
-- 115g de germes de blé
-- graines en tout genre (courge, sésame, tournesol, lin)
+| Ingrédient | Quantité |
+|------------||
+| huile (colza ou tournesol) | 160 g |
+| miel liquide | 320 g |
+| lait | 2 cuillères à soupe |
+| flocons d'avoine | 500 g |
+| noix de coco râpée | 100 g |
+| germes de blé | 115 g |
+| graines (courge, sésame, tournesol, lin) | à volonté |
 
 ## Étapes
 
