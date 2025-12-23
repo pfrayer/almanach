@@ -51,4 +51,4 @@ text
 is
 here
 ```
-[Source and details](https://stackoverflow.com/questions/1251999/how-can-i-replace-each-newline-n-with-a-space-using-sed/1252191#1252191){target=_blank}.
+[Source and details](https://stackoverflow.com/questions/1251999/how-can-i-replace-each-newline-n-with-a-space-using-sed/1252191#1252191){target=_blank}

@@ -11,10 +11,11 @@ site_dir: site
 
 nav:
 - Computers (🇬🇧):
+  - ArchLinux: docs/compute/archlinux.md
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
   - Bash: docs/compute/bash.md
-  - DNS: docs/compute/dns.md
   - Debian: docs/compute/debian.md
+  - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md
   - Git: docs/compute/git.md
   - Images, videos, PDF: docs/compute/images.md
@@ -24,8 +25,8 @@ nav:
   - MongoDB: docs/compute/mongodb.md
   - PGP / GPG: docs/compute/pgp.md
   - Python: docs/compute/python.md
-  - SSL / TLS: docs/compute/ssl.md
   - SSH: docs/compute/ssh.md
+  - SSL / TLS: docs/compute/ssl.md
   - whois: docs/compute/whois.md
 - Cooking (🇫🇷):
   - Sucré:
