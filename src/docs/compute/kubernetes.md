@@ -27,14 +27,14 @@ nodes                              no                                           
 ...
 ```
 
-### Logs
+## Logs
 
 Get deployment logs:
 ```shell
 $ kubectl logs deployment/<name-of-deployment>
 ```
 
-### Failure analysis
+## Failure analysis
 
 List non-running pods, display their events:
 ```shell
@@ -44,4 +44,23 @@ do
     kubectl get event --field-selector involvedObject.name=${pod}
     echo "----"
 done
+```
+
+## Helm
+
+### Render a Chart template localy
+
+```shell
+$ ls
+Chart.yaml  README.md  templates  values.yaml
+
+$ helm template . --debug
+---
+# Source: l2c-router/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: l2c-router-release-name
+  labels:
+    ...
 ```
