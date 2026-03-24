@@ -63,7 +63,7 @@ $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[2]'
 
 ```shell
 $ echo '[{"foo": "bar"}, {"foo": 2}, {"foo": "kowabunga"}]' | jq '.[2].foo'
-"kowabunga
+"kowabunga"
 ```
 
 ## Select

@@ -6,7 +6,7 @@ Search a given record for a given domain:
 
 ```shell
 $ nslookup -type=[record type] [domain]
-$ nslookup -type=A
+$ nslookup -type=A almanach.pateenchroot.ovh
 Server:     10.15.25.129
 Address:    10.15.25.129#53
 

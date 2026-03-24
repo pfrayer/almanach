@@ -14,6 +14,7 @@ nav:
   - ArchLinux: docs/compute/archlinux.md
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
   - Bash: docs/compute/bash.md
+  - Copilot CLI: docs/compute/copilot_cli.md
   - Debian: docs/compute/debian.md
   - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md
@@ -24,7 +25,10 @@ nav:
   - Logs: docs/compute/logs.md
   - MongoDB: docs/compute/mongodb.md
   - PGP / GPG: docs/compute/pgp.md
-  - Python: docs/compute/python.md
+  - Python:
+    - General: docs/compute/python/general.md
+    - pyenv: docs/compute/python/pyenv.md
+    - asyncio: docs/compute/python/asyncio.md
   - SSH: docs/compute/ssh.md
   - SSL / TLS: docs/compute/ssl.md
   - whois: docs/compute/whois.md
@@ -57,15 +61,21 @@ theme:
   - navigation.expand
   - navigation.indexes
   - navigation.instant
-  - navigation.sections
+  - navigation.path
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.tracking
+  - search.highlight
+  - search.suggest
+  - toc.follow
   icon:
     repo: fontawesome/brands/github
 
 plugins:
-- search
+- search:
+    lang:
+    - en
+    - fr
 - git-revision-date-localized:
     type: datetime
     fallback_to_build_date: true
@@ -86,6 +96,9 @@ markdown_extensions:
 - def_list
 - md_in_html
 - pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
 - pymdownx.highlight:
     use_pygments: true
     linenums: true

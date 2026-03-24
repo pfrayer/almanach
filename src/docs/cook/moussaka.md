@@ -28,15 +28,15 @@
 ## Étapes
 
 0. Préchauffer le four à 180°C
-1. Couper les aubergines en rondelles. Les mettre sur une plaque allant au four (sur du papier sulfirisé), un filet d'huile d'olive, des épices, du sel. Au four pendant 30min
+1. Couper les aubergines en rondelles. Les mettre sur une plaque allant au four (sur du papier sulfurisé), un filet d'huile d'olive, des épices, du sel. Au four pendant 30min
 2. Pareil avec les pommes de terre (on peut les cuire en même temps que les aubergines)
 3. Couper ail et oignons. Les cuire dans une cocotte 5/10min. Réserver
 4. Dans la cocotte rajouter la viande. La faire cuire seule jusqu'à ce qu'elle commence à dorer
 5. Rajouter le mélange ail/oignons
 6. Déglacer avec le verre de vin rouge, bien mélanger. Laisser quelques minutes à feu moyen
-7. Rajouter: la puple et le concentré de tomate;  la noix de muscade rapée; les feuilles de laurier; le piment d'espelette; le bouillon de boeuf; sel et poivre. Continuer à faire cuir à feu doux/moyen
-8. Préparer la béchamelle fromagère: dans une casserolle faidre fondre le beurre, rajouter la farine, mélanger. Rajouter le lait **au fur et à mesure**. Au premier bouillon baisser le feu, rajouter sel, poivre, noix de muscade rapée. Ajouter la moitiée de l'Ossau-iraty rapée.
-9. Dans un plat à gratin ajouter dans l'ordre: une couche de pomme de terre, une couche d'aubergine, la viande, une couche d'aubergine, la béchamelle fromagère. Finir par l'autre moitiée de l'Ossau-iraty
+7. Rajouter: la pulpe et le concentré de tomate; la noix de muscade râpée; les feuilles de laurier; le piment d'Espelette; le bouillon de bœuf; sel et poivre. Continuer à faire cuire à feu doux/moyen
+8. Préparer la béchamel fromagère: dans une casserole faire fondre le beurre, rajouter la farine, mélanger. Rajouter le lait **au fur et à mesure**. Au premier bouillon baisser le feu, rajouter sel, poivre, noix de muscade râpée. Ajouter la moitié de l'Ossau-Iraty râpée.
+9. Dans un plat à gratin ajouter dans l'ordre: une couche de pomme de terre, une couche d'aubergine, la viande, une couche d'aubergine, la béchamel fromagère. Finir par l'autre moitié de l'Ossau-Iraty
 10. Au four à 180°C pendant ~30min
 
 [Source](https://www.instagram.com/reel/DOVwykxjKF9/){target=_blank}

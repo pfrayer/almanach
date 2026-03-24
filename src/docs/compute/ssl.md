@@ -1,6 +1,6 @@
 # TLS & SSL
 
-## Mozilla SL Configuration Generator
+## Mozilla SSL Configuration Generator
 
 [https://ssl-config.mozilla.org/](https://ssl-config.mozilla.org/){target=_blank}
 

@@ -69,7 +69,7 @@ $ aws s3api list-object-versions --bucket my-bucket-name --profile my-profile-na
             "Key": "foobar/2024-11-28.zst",
             "VersionId": "1732934824.643878",
             "IsLatest": true,
-            "LastModified": "2024-11-31T02:30:25.000Z",
+            "LastModified": "2024-12-01T02:30:25.000Z",
             "Owner": {
                 "DisplayName": "12345:user-xxx",
                 "ID": "12345:user-xxx"
