@@ -25,7 +25,7 @@ Custom theming uses glassmorphism-style CSS in `src/assets/css/` (backdrop blur,
 
 ### Content language
 
-Compute docs are in English. Cooking docs are in French. Match the language of the section when adding or editing content.
+Compute docs are in English. Cooking docs are in French. **Always write in the section's language, regardless of the language used in the prompt.**
 
 ### Adding a new page
 

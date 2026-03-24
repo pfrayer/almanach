@@ -25,7 +25,10 @@ nav:
   - Logs: docs/compute/logs.md
   - MongoDB: docs/compute/mongodb.md
   - PGP / GPG: docs/compute/pgp.md
-  - Python: docs/compute/python.md
+  - Python:
+    - General: docs/compute/python/general.md
+    - pyenv: docs/compute/python/pyenv.md
+    - asyncio: docs/compute/python/asyncio.md
   - SSH: docs/compute/ssh.md
   - SSL / TLS: docs/compute/ssl.md
   - whois: docs/compute/whois.md
@@ -59,7 +62,6 @@ theme:
   - navigation.indexes
   - navigation.instant
   - navigation.path
-  - navigation.sections
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.tracking
@@ -95,8 +97,8 @@ markdown_extensions:
 - md_in_html
 - pymdownx.details
 - pymdownx.emoji:
-    emoji_index: !!python/name:material.extensions.emoji.twemoji
-    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
 - pymdownx.highlight:
     use_pygments: true
     linenums: true

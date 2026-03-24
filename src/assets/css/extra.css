@@ -271,7 +271,14 @@
 
   .md-typeset .admonition,
   .md-typeset details {
-    background-color: transparent;
+    background-color: hsla(0, 0%, 100%, 0.45);
+    color: #1a1a1a;
+  }
+
+  [data-md-color-scheme="slate"] .md-typeset .admonition,
+  [data-md-color-scheme="slate"] .md-typeset details {
+    background-color: hsla(0, 0%, 0%, 0.3);
+    color: inherit;
   }
 
   .md-typeset img,

@@ -1,8 +1,6 @@
-# Python
+# pyenv
 
-## `pyenv`
-
-### Install `pyenv`
+## Install `pyenv`
 
 ```shell
 $ sudo apt-get install -y make build-essential git libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
@@ -20,7 +18,7 @@ eval "$(${HOME}/.pyenv/bin/pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-### Cheatsheet
+## Cheatsheet
 
 Main usage is:
 
@@ -39,7 +37,7 @@ $ python --version
 # Python 3.12.1
 ```
 
-#### `pyenv install`
+### `pyenv install`
 
 List available remote Python versions you can install:
 
@@ -54,7 +52,7 @@ $ pyenv install 3.9.12
 $ pyenv rehash
 ```
 
-#### `pyenv versions`
+### `pyenv versions`
 
 List locally installed versions:
 
@@ -62,7 +60,7 @@ List locally installed versions:
 $ pyenv versions
 ```
 
-#### `pyenv local`
+### `pyenv local`
 
 Set a local application-specific pyenv virtualenv in the current directory:
 
@@ -86,7 +84,7 @@ $ pyenv local --unset
 $ rm .python-version
 ```
 
-#### `pyenv virtualenv`
+### `pyenv virtualenv`
 
 List locally created `virtualenv`s:
 
@@ -109,79 +107,9 @@ Delete an existing `virtualenv`:
 $ pyenv uninstall my-project
 ```
 
-### Upgrade `pyenv`
+## Upgrade `pyenv`
 
 ```shell
 $ cd $(pyenv root)
 $ git pull
 ```
-
-## List
-
-### Sort list of dicts based on a dict's key
-
-```python
-my_unsorted_list = [ {"name": "Julien", "age": 12}, {"name": "Xavier", "age": 20}, {"name": "Alex", "age": 43}]
-sorted(my_unsorted_list, key=lambda d: d["name"])
-# Output
-# [{'name': 'Alex', 'age': 43}, {'name': 'Julien', 'age': 12}, {'name': 'Xavier', 'age': 20}]
-```
-
-### Select random item in a list
-
-```python
-import random
-
-my_list = [1, 2, 3, 4]
-random.choice(my_list)
-# 2
-```
-
-## Archives
-
-Create a `.tar.gz` archive. Suppose you have this source folder structure:
-
-```text
-.
-└── source-dir
-    ├── file1
-    ├── file2
-    └── file3
-```
-
-Then:
-
-```python
-import tarfile
-
-with tarfile.open(f"source-dir.tgz", "w:gz") as tar:
-    tar.add("source-dir")
-```
-
-Will create a `source-dir.tgz` archive containing the exact same structure (keeping the `source-dir`):
-
-To only add files to the archives (without keeping `source-dir`):
-
-```python
-import os
-import tarfile
-
-with tarfile.open(f"source-dir.tgz", "w:gz") as tar:
-    for filename in os.listdir("source-dir"):
-        tar.add(
-            os.path.join("source-dir", filename), # source file path
-            arcname=filename,                     # name of the file in the archive
-            recursive=False,                      # should we keep the source structure, aka keep "source-dir/filename" ?
-        )
-```
-
-Will create a `source-dir.tgz` archive with this structure:
-
-```text
-.
-├── file1
-├── file2
-└── file3
-```
-
-Other compression algorithms are supported (`bz2`, `lzma` etc). [Official doc](https://docs.python.org/fr/3.13/library/archiving.html){target=_blank}
