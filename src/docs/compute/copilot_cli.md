@@ -208,17 +208,20 @@ Copilot ships with GitHub's MCP server by default. Add custom MCP servers via `/
 
 Copilot CLI supports Language Server Protocol for code intelligence (go-to-definition, hover, diagnostics). Servers are not bundled — install them separately.
 
-Config at user level (`~/.copilot/lsp-config.json`) or repo level (`.github/lsp.json`):
+Config at user level (`~/.copilot/lsp-config.json`) or repo level (`.github/lsp.json`). For instance for Python:
+
+```shell
+$ pip install python-lsp-server
+```
 
 ```json
 {
   "lspServers": {
-    "typescript": {
-      "command": "typescript-language-server",
-      "args": ["--stdio"],
+    "python": {
+      "command": "pylsp",
+      "args": [],
       "fileExtensions": {
-        ".ts": "typescript",
-        ".tsx": "typescript"
+        ".py": "python"
       }
     }
   }
