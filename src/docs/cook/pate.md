@@ -47,10 +47,10 @@
 | Sel | ½ cuillère à café |
 | Zeste de citron ou poudre d'amande (optionnel) | 1 zeste ou équivalent |
 
-0. Dans un saladier, mélanger l'oeuf et le sucre poudre jusqu'à obtention d'un mélange mousseu. Ajouter une pincée de sel
+0. Dans un saladier, mélanger l'oeuf et le sucre poudre jusqu'à obtention d'un mélange mousseux. Ajouter une pincée de sel
 1. Ajouter la farine et le beurre. Rajouter le zeste ou la poudre d'amande si vous en avez. Bien mélanger jusqu'à obtenir une pâte homogène
 2. Etaler sur un papier sulfurisé, mettre dans un moule, piquer avec une fourchette
-3. Faites cuire à four chaud (1890°C) 12 à 15 min
+3. Faites cuire à four chaud (180°C) 12 à 15 min
 
 ## Pâte feuilletée
 

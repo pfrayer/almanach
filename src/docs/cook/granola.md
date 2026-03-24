@@ -3,7 +3,7 @@
 ## Ingrédients
 
 | Ingrédient | Quantité |
-|------------||
+|------------|----------|
 | huile (colza ou tournesol) | 160 g |
 | miel liquide | 320 g |
 | lait | 2 cuillères à soupe |
@@ -15,7 +15,7 @@
 ## Étapes
 
 0. Faire chauffer le four (chaleur tournante) à 180°C
-1. Dans un saladié, mélanger les flocons, la noix de coco, les germes de blés, les graines
+1. Dans un saladier, mélanger les flocons, la noix de coco, les germes de blé, les graines
 2. Porter à ébullition l'huile, le miel et le lait
 3. Verser sur le mélange de graines, bien mélanger
 4. Ajouter une cuillerée à café de sel, mélanger

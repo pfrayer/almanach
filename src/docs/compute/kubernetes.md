@@ -40,7 +40,7 @@ List non-running pods, display their events:
 ```shell
 $ for pod in $(kubectl get pods --field-selector status.phase!=Running | grep -v "^NAME" | awk '{print $1}' | sort -u)
 do
-    echo "POD: {$pod}"
+    echo "POD: ${pod}"
     kubectl get event --field-selector involvedObject.name=${pod}
     echo "----"
 done
@@ -48,7 +48,7 @@ done
 
 ## Helm
 
-### Render a Chart template localy
+### Render a Chart template locally
 
 ```shell
 $ ls

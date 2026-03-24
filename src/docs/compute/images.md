@@ -48,6 +48,6 @@ $ convert my_image.webp -resize 200x100 my_image_resized.webp
 # Resize image in %
 $ convert my_image.webp -resize 700% my_image.webp
 
-# Resise big image without impacting computer memory
+# Resize big image without impacting computer memory
 $ convert -limit memory 2mb -limit map 2mb my_image.webp -resize 700% my_image.webp
 ```

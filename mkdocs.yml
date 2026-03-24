@@ -57,15 +57,22 @@ theme:
   - navigation.expand
   - navigation.indexes
   - navigation.instant
+  - navigation.path
   - navigation.sections
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.tracking
+  - search.highlight
+  - search.suggest
+  - toc.follow
   icon:
     repo: fontawesome/brands/github
 
 plugins:
-- search
+- search:
+    lang:
+    - en
+    - fr
 - git-revision-date-localized:
     type: datetime
     fallback_to_build_date: true
@@ -86,6 +93,9 @@ markdown_extensions:
 - def_list
 - md_in_html
 - pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
 - pymdownx.highlight:
     use_pygments: true
     linenums: true
