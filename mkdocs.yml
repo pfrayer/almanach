@@ -14,6 +14,7 @@ nav:
   - ArchLinux: docs/compute/archlinux.md
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
   - Bash: docs/compute/bash.md
+  - Copilot CLI: docs/compute/copilot_cli.md
   - Debian: docs/compute/debian.md
   - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md

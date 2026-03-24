@@ -304,6 +304,12 @@
     box-shadow: 0 0 1rem 0.25rem hsl(0deg 100% 37.45% / 20%);
   }
 
+  [data-md-color-scheme="default"] .md-typeset kbd {
+    color: #36464e;
+    background-color: hsla(0, 0%, 90%, 0.8);
+    box-shadow: 0 0.1rem 0 0.05rem hsla(0, 0%, 60%, 0.3), 0 0.1rem 0 hsla(0, 0%, 60%, 0.3), 0 -0.1rem 0.2rem hsla(0, 0%, 100%, 0.2) inset;
+  }
+
   .md-tabs__link {
     transform: translateZ(0);
   }
