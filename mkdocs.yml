@@ -19,6 +19,7 @@ nav:
   - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md
   - Git: docs/compute/git.md
+  - GitHub Actions: docs/compute/github_actions.md
   - Images, videos, PDF: docs/compute/images.md
   - jq / yq: docs/compute/jq_yq.md
   - Kubernetes: docs/compute/kubernetes.md
@@ -29,6 +30,8 @@ nav:
     - General: docs/compute/python/general.md
     - pyenv: docs/compute/python/pyenv.md
     - asyncio: docs/compute/python/asyncio.md
+    - Poetry: docs/compute/python/poetry.md
+    - pytest: docs/compute/python/pytest.md
   - SSH: docs/compute/ssh.md
   - SSL / TLS: docs/compute/ssl.md
   - whois: docs/compute/whois.md
