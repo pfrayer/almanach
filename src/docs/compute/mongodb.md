@@ -11,7 +11,7 @@ use mydb
 db
 ```
 
-```text
+```javascript
 Current Mongosh Log ID: 67f...
 Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000
 MongoDB server version: 8.0.0
@@ -43,7 +43,7 @@ db.users.insertMany([
 ])
 ```
 
-```text
+```javascript
 {
   acknowledged: true,
   insertedId: ObjectId("665000000000000000000001")
@@ -66,7 +66,7 @@ db.users.find()
 db.users.find().pretty()
 ```
 
-```text
+```javascript
 [
   {
     _id: ObjectId("665000000000000000000001"),
@@ -107,7 +107,7 @@ db.users.find({
 db.users.find({ city: "Paris" }, { name: 1, age: 1, _id: 0 })
 ```
 
-```text
+```javascript
 [
   { name: 'Alice', age: 29 },
   { name: 'Chloe', age: 22 }
@@ -129,7 +129,7 @@ db.users.find().skip(20).limit(10) // page 3 with page size 10
 db.users.findOne({ name: "Alice" })
 ```
 
-```text
+```javascript
 {
   _id: ObjectId("665000000000000000000001"),
   name: 'Alice',
@@ -146,7 +146,7 @@ db.users.estimatedDocumentCount() // fast total estimate
 db.users.countDocuments({ city: "Paris" }) // accurate with filter
 ```
 
-```text
+```javascript
 3
 2
 ```
@@ -176,7 +176,7 @@ db.users.updateOne(
 )
 ```
 
-```text
+```javascript
 { acknowledged: true, matchedCount: 1, modifiedCount: 1, upsertedId: null }
 { acknowledged: true, matchedCount: 2, modifiedCount: 2, upsertedId: null }
 { acknowledged: true, matchedCount: 1, modifiedCount: 1, upsertedId: null }
@@ -195,7 +195,7 @@ db.users.deleteOne({ name: "Alice" })
 db.users.deleteMany({ age: { $lt: 18 } })
 ```
 
-```text
+```javascript
 { acknowledged: true, deletedCount: 1 }
 { acknowledged: true, deletedCount: 0 }
 ```
@@ -211,7 +211,7 @@ db.users.aggregate([
 ])
 ```
 
-```text
+```javascript
 [
   { _id: 'Paris', count: 2 },
   { _id: 'Lyon', count: 1 }
@@ -233,7 +233,7 @@ db.users.aggregate([
 ])
 ```
 
-```text
+```javascript
 [
   { _id: 'Paris', avgAge: 25.5, minAge: 22, maxAge: 29 },
   { _id: 'Lyon', avgAge: 35, minAge: 35, maxAge: 35 }
@@ -251,7 +251,7 @@ db.users.aggregate([
 ])
 ```
 
-```text
+```javascript
 [
   { name: 'Bob', city: 'Lyon', age: 35 },
   { name: 'Alice', city: 'Paris', age: 29 },
@@ -269,7 +269,7 @@ db.users.aggregate([
 ])
 ```
 
-```text
+```javascript
 [
   { _id: 'pro', count: 1 },
   { _id: 'beta', count: 1 }
@@ -282,7 +282,7 @@ db.users.aggregate([
 db.users.distinct("city")
 ```
 
-```text
+```javascript
 [ 'Paris', 'Lyon' ]
 ```
 
@@ -295,7 +295,7 @@ db.users.getIndexes()
 db.users.dropIndex("city_1_age_-1")
 ```
 
-```text
+```javascript
 email_1
 city_1_age_-1
 [
@@ -313,7 +313,7 @@ db.users.findOne() // inspect shape
 db.users.stats()
 ```
 
-```text
+```javascript
 {
   _id: ObjectId("665000000000000000000002"),
   name: 'Bob',
