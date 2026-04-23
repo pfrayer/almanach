@@ -228,6 +228,81 @@ $ pip install python-lsp-server
 }
 ```
 
+## Chronicle
+
+!!! note "Experimental"
+    `/chronicle` requires experimental mode. Enable it with `/experimental on` or `copilot --experimental`.
+
+The `/chronicle` slash command leverages your local session history (stored in `~/.copilot/session-state/` and indexed in a SQLite session store) to generate insights about your work.
+
+### Subcommands
+
+| Subcommand | Description |
+|------------|-------------|
+| `/chronicle standup` | Generate a standup report from recent sessions |
+| `/chronicle tips` | Get personalized tips based on your usage patterns |
+| `/chronicle improve` | Suggest improvements for your custom instructions file |
+| `/chronicle reindex` | Rebuild the session store index from session files |
+
+### `/chronicle standup`
+
+Generates a short report grouped by completion status, based on branches worked on, accomplishments, and linked PRs/issues. Defaults to the last 24 hours.
+
+```
+/chronicle standup
+/chronicle standup for the last 3 days
+```
+
+Example output:
+
+```text
+Standup for March 13 2026:
+
+✅ Done
+  myapp-repo repo maintenance (main branch)
+   - Synced local, cleaned files, audited deps, reviewed architecture
+
+🚧 In Progress
+  MyApp configuration (suppress-start-message branch)
+   - Suppressing startup init prompt message
+```
+
+### `/chronicle tips`
+
+Analyzes your recent sessions — prompts, tools used, features you haven't tried — and provides 3–5 personalized recommendations. You can focus on a specific area:
+
+```
+/chronicle tips
+/chronicle tips for better prompting
+```
+
+### `/chronicle improve`
+
+Deep-dives into your session history to find friction signals: repeated test failures, build errors, back-and-forth corrections. Generates targeted suggestions for your `.github/copilot-instructions.md` file.
+
+```
+/chronicle improve
+```
+
+After presenting recommendations, Copilot lets you toggle which ones to apply (arrow keys + space), then creates or updates the instructions file.
+
+!!! tip "Scope"
+    Unlike other chronicle subcommands, `improve` is scoped to the **current repository** only.
+
+### Asking free-form questions
+
+You don't need `/chronicle` for every history query. Copilot automatically searches the session store when you ask about past work:
+
+```
+Using what you know about my sessions, what type of tasks give me one-shot successes?
+Based on my previous CLI sessions, how could I prompt you in a way that would cost less?
+Have I worked on anything related to the payments API?
+```
+
+### Session data privacy
+
+All session data stays on your local machine in `~/.copilot/session-state/`. Nothing is uploaded beyond normal AI model interactions. Delete a session by removing its directory, then run `/chronicle reindex`.
+
 ## Update
 
 ```shell
