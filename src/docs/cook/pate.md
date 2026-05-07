@@ -2,8 +2,6 @@
 
 ## Pâte brisée
 
-### Ingrédients
-
 | Nom de l'ingrédient | Quantité |
 |---------------------|----------|
 | Farine | 300 g |
@@ -11,8 +9,6 @@
 | Sel | ½ cuillère à café |
 | Eau tiède (ou lait) | 8 cl |
 | Graines torréfiées (optionnel) – tournesol, lin, … | — |
-
-### Étapes
 
 0. Mélanger la farine et le sel dans un plat
 1. Rajouter les graines si vous en avez
@@ -54,4 +50,25 @@
 
 ## Pâte feuilletée
 
-TODO
+| Nom de l'ingrédient | Quantité |
+|---------------------|----------|
+| Farine | 250 g |
+| Beurre froid en dés | 200 g |
+| Sel | 1 cuillère à café |
+| Eau froide | 12 cl |
+
+0. Mélanger la farine et le sel dans un saladier. Ajouter le beurre froid en dés
+1. Du bout des doigts, incorporer rapidement le beurre à la farine sans chercher à obtenir une pâte homogène — il doit rester des morceaux de beurre visibles
+2. Ajouter l'eau froide progressivement et mélanger juste assez pour que la pâte forme une boule. Ne pas trop travailler la pâte
+3. Aplatir la boule en rectangle, envelopper dans du film alimentaire et laisser reposer 30 min au réfrigérateur
+4. Étaler la pâte en un long rectangle sur un plan de travail légèrement fariné, puis la plier en trois (comme une lettre). C'est le premier **tour**
+5. Tourner la pâte d'un quart de tour, étaler de nouveau en rectangle, et replier en trois. C'est le deuxième tour
+6. Envelopper et laisser reposer 20 min au réfrigérateur
+7. Répéter les étapes 4 à 6 deux fois supplémentaires (soit 6 tours au total)
+8. Laisser reposer 30 min au réfrigérateur avant utilisation
+
+!!! tip "Conseils"
+    - Le beurre et l'eau doivent rester froids tout au long de la préparation pour que le feuilletage soit réussi
+    - Travailler rapidement pour éviter que le beurre ne fonde
+    - Pour une dorure brillante, badigeonner la surface d'un jaune d'œuf avant cuisson
+    - Cuire entre 200 °C et 220 °C selon l'utilisation
