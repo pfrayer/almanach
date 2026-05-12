@@ -27,6 +27,7 @@ nav:
   - Kubernetes: docs/compute/kubernetes.md
   - Logs: docs/compute/logs.md
   - MongoDB: docs/compute/mongodb.md
+  - OpenSearch: docs/compute/opensearch.md
   - PGP / GPG: docs/compute/pgp.md
   - Python:
     - General: docs/compute/python/general.md
