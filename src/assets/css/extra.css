@@ -320,3 +320,7 @@
   .md-tabs__link {
     transform: translateZ(0);
   }
+
+  .md-main .md-grid {
+    max-width: 70rem;
+  }
