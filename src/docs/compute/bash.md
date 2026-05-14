@@ -1,5 +1,88 @@
 # Bash
 
+## Strict mode
+
+Start scripts with this to catch errors early:
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
+
+| Flag | Effect |
+|------|--------|
+| `-e` | Exit on error |
+| `-u` | Error on undefined variable |
+| `-o pipefail` | Fail if any command in a pipe fails |
+
+## Variable substitution
+
+```bash
+${var:-default}    # Use default if var is unset/empty
+${var:=default}    # Assign default if var is unset/empty
+${var:?error msg}  # Exit with error if var is unset/empty
+${#var}            # Length of var
+${var%suffix}      # Remove shortest suffix match
+${var%%suffix}     # Remove longest suffix match
+${var#prefix}      # Remove shortest prefix match
+${var##prefix}     # Remove longest prefix match
+${var/old/new}     # Replace first match
+${var//old/new}    # Replace all matches
+```
+
+## Test operators
+
+### Files
+
+```bash
+[ -f file ]   # File exists and is regular
+[ -d dir ]    # Directory exists
+[ -s file ]   # File exists and is not empty
+[ -r file ]   # File is readable
+[ -w file ]   # File is writable
+[ -x file ]   # File is executable
+[ -L file ]   # File is a symlink
+```
+
+### Strings & numbers
+
+```bash
+[ -z "$str" ]       # String is empty
+[ -n "$str" ]       # String is not empty
+[ "$a" = "$b" ]     # Strings are equal
+[[ "$a" =~ regex ]] # Regex match (bash only)
+[ "$a" -eq "$b" ]   # Integers equal (-ne, -lt, -gt, -le, -ge)
+```
+
+## Loops
+
+```bash
+# Iterate over files
+for f in /var/log/*.log; do
+    echo "Processing $f"
+done
+
+# Read file line by line
+while IFS= read -r line; do
+    echo "$line"
+done < input.txt
+
+# C-style for loop
+for ((i=0; i<10; i++)); do
+    echo "$i"
+done
+```
+
+## Trap & cleanup
+
+```bash
+cleanup() {
+    rm -f "$tmpfile"
+}
+trap cleanup EXIT
+
+tmpfile=$(mktemp)
+```
+
 ## `cat EOF` syntax
 
 ```shell
