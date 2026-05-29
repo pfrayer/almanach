@@ -22,6 +22,7 @@ nav:
   - Docker: docs/compute/docker.md
   - Git: docs/compute/git.md
   - GitHub Actions: docs/compute/github_actions.md
+  - Helm: docs/compute/helm.md
   - Images, videos, PDF: docs/compute/images.md
   - jq / yq: docs/compute/jq_yq.md
   - Kubernetes: docs/compute/kubernetes.md
