@@ -15,6 +15,7 @@ nav:
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
   - Bash: docs/compute/bash.md
   - AI:
+    - Claude Code: docs/compute/ai/claude_code.md
     - Copilot CLI: docs/compute/ai/copilot_cli.md
     - OpenCode: docs/compute/ai/opencode.md
   - Debian: docs/compute/debian.md
