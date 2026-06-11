@@ -324,3 +324,152 @@
   .md-main .md-grid {
     max-width: 70rem;
   }
+
+  /* ===========================================================
+     Homepage — hero + "deux grandes portes"
+     =========================================================== */
+
+  .home-hero {
+    text-align: center;
+    margin: 3.5rem 0 3rem;
+  }
+
+  .home-hero h1 {
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin: 0 0 .4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .home-hero p {
+    margin: 0 auto;
+    max-width: 34rem;
+    font-size: .85rem;
+    opacity: .85;
+  }
+
+  .home-doors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 34rem;
+    margin: 0 auto 4rem;
+  }
+
+  .home-door {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .6rem;
+    padding: 1.5rem 1rem;
+    border-radius: .9rem;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    color: inherit;
+    background: hsla(0, 0%, 100%, 0.03);
+    box-shadow: 0 0.4rem 1rem hsla(0, 0%, 0%, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background .25s ease, box-shadow .25s ease;
+  }
+
+  /* Multicolor gradient border drawn with a masked pseudo-element so the
+     interior stays transparent (and keeps the backdrop blur). */
+  .home-door::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    /* Default: the classic amber border */
+    background: var(--md-accent-fg-color);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .home-door:hover {
+    background: hsla(0, 0%, 100%, 0.08);
+    box-shadow: 0 0.9rem 1.8rem hsla(0, 0%, 0%, 0.25);
+    animation: door-wobble 0.6s ease-in-out infinite;
+  }
+
+  /* Hover: switch to the flowing multicolor border */
+  .home-door:hover::before {
+    background-image: linear-gradient(135deg,
+      #ff8a00, #e52e71, #9b51e0, #00c2ff, #38ef7d, #ff8a00);
+    animation: border-flow 0.8s linear infinite;
+  }
+
+  .home-door:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: 3px;
+  }
+
+  @keyframes border-flow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes door-wobble {
+    0%, 100% { transform: translateY(-3px) rotate(0deg); }
+    25%      { transform: translateY(-3.5px) rotate(-0.35deg); }
+    75%      { transform: translateY(-3.5px) rotate(0.35deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-door:hover,
+    .home-door:hover::before {
+      animation: none;
+    }
+  }
+
+  .home-door__icon {
+    font-size: 2.4rem;
+    line-height: 1;
+    filter: drop-shadow(0 0.15rem 0.3rem hsla(0, 0%, 0%, 0.25));
+  }
+
+  .home-door__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .home-door__flag {
+    font-size: .9rem;
+    vertical-align: middle;
+  }
+
+  /* Light scheme: a touch of glass so the transparent card stays readable */
+  [data-md-color-scheme="default"] .home-door {
+    background: hsla(0, 0%, 100%, 0.18);
+    color: #1a1a1a;
+  }
+
+  [data-md-color-scheme="default"] .home-door:hover {
+    background: hsla(0, 0%, 100%, 0.3);
+  }
+
+  /* Stack the doors on small screens */
+  @media screen and (max-width: 44.9375em) {
+    .home-doors {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .home-hero {
+      margin: 2.5rem 0 2rem;
+    }
+    .home-hero h1 {
+      font-size: 2rem;
+    }
+  }
