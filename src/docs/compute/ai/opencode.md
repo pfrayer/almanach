@@ -1,3 +1,7 @@
+---
+description: "OpenCode cheatsheet: install, agents, slash commands, the plan-then-build workflow, MCP servers, LSP and custom commands."
+---
+
 # OpenCode
 
 Open-source AI coding agent in the terminal. Built by [Anomaly](https://anomaly.co){target=_blank}, 100% provider-agnostic.

@@ -1,3 +1,7 @@
+---
+description: "Poetry cheatsheet: create projects, add and remove dependencies, lock and sync, and export requirements for CI."
+---
+
 # Poetry
 
 ## Create and use a project

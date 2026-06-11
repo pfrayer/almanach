@@ -1,3 +1,7 @@
+---
+description: "PostgreSQL psql cheatsheet: connect, meta-commands, users, tables, CRUD, indexes, dump/restore and JSON support."
+---
+
 # PostgreSQL
 
 ## Connect

@@ -1,3 +1,7 @@
+---
+description: "Claude Code cheatsheet: install, slash commands, subagents, hooks, MCP servers, permissions and the explore-plan-implement workflow."
+---
+
 # Claude Code
 
 AI-powered coding agent in the terminal, built by Anthropic. Runs directly in your shell with full access to your codebase.

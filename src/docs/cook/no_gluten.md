@@ -1,3 +1,7 @@
+---
+description: "Farines sans gluten pour remplacer la farine de blé : pourquoi les mélanger, astuces et recette de pain banane-amande."
+---
+
 !!! example
 
     Ce contenu a été généré par IA (GPT-OSS-120b) avec comme prompt: "Par quelle farine remplacer la farine de blé pour ne pas avoir de gluten  ?"

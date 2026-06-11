@@ -1,3 +1,7 @@
+---
+description: "GitHub Actions cheatsheet: a workflow skeleton, fast triage checklist, safe defaults and adding a manual trigger."
+---
+
 # GitHub Actions
 
 ## Quick checks in GitHub UI

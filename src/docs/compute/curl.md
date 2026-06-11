@@ -1,3 +1,7 @@
+---
+description: "curl cheatsheet: HTTP methods, headers, JSON bodies, authentication, cookies and response inspection."
+---
+
 # curl
 
 ## Basics

@@ -1,3 +1,7 @@
+---
+description: "AWS S3 CLI cheatsheet: list, upload, download and delete objects, versioning, replication setup and presigned download URLs."
+---
+
 # AWS S3 CLI
 
 ## Setup

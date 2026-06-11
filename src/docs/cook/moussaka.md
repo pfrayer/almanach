@@ -1,3 +1,7 @@
+---
+description: "Recette de moussaka maison : ingrédients et étapes pour une moussaka traditionnelle aux aubergines."
+---
+
 # Moussaka
 
 ## Ingrédients

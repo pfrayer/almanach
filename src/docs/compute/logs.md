@@ -1,3 +1,7 @@
+---
+description: "Log analysis cheatsheet: journalctl, tail and follow, grep/awk, JSON logs with jq, tailspin and lnav."
+---
+
 # Logs
 
 ## journalctl

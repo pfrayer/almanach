@@ -1,3 +1,7 @@
+---
+description: "ArchLinux cheatsheet: install AUR packages manually and the essential yay AUR helper commands."
+---
+
 # ArchLinux
 
 ## Install an AUR package manually

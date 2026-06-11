@@ -1,3 +1,7 @@
+---
+description: "Vim cheatsheet: modes, navigation, editing, visual mode, search and replace, splits and useful ~/.vimrc defaults."
+---
+
 # Vim
 
 ## Modes

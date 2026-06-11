@@ -1,3 +1,7 @@
+---
+description: "Git cheatsheet: config, branches, rebase, stash, tags, undoing changes, GPG signing and handy aliases."
+---
+
 # Git
 
 ## Configuration

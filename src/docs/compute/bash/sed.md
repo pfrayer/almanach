@@ -1,3 +1,7 @@
+---
+description: "sed cheatsheet: substitute text, in-place edits with backup, delete and print lines, and handle newlines."
+---
+
 # sed
 
 ```bash

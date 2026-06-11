@@ -1,3 +1,7 @@
+---
+description: "Kubernetes kubectl cheatsheet: contexts, logs, exec and debug, rollouts, failure analysis, secrets, ConfigMaps and k9s."
+---
+
 # Kubernetes
 
 ## Context & namespace

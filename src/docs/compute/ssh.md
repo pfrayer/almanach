@@ -1,3 +1,7 @@
+---
+description: "SSH cheatsheet: keys, the ~/.ssh/config file, jump hosts, port forwarding, SOCKS tunnels and ssh-agent."
+---
+
 # SSH
 
 ## Keys

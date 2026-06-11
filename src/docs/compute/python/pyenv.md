@@ -1,3 +1,7 @@
+---
+description: "pyenv cheatsheet: install and switch Python versions, manage virtualenvs and set per-project versions."
+---
+
 # pyenv
 
 ## Install `pyenv`

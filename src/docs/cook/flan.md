@@ -1,3 +1,7 @@
+---
+description: "Recette de flan pâtissier maison : la version simple et des variantes plus élaborées, ingrédients et étapes."
+---
+
 # Flan pâtissier
 
 ## Le basic

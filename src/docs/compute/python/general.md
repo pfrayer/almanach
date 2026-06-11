@@ -1,3 +1,7 @@
+---
+description: "Python cheatsheet: list and dict comprehensions, sorting, collections, dataclasses, f-strings and regex."
+---
+
 # General
 
 ## List & dict comprehensions

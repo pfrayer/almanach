@@ -1,3 +1,7 @@
+---
+description: "Debian cheatsheet: apt and dpkg, repositories and keys, package pinning, holding versions and system info."
+---
+
 # Debian
 
 ## apt

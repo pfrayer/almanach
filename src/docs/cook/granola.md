@@ -1,3 +1,7 @@
+---
+description: "Recette de granola maison : ingrédients et étapes pour un granola croustillant fait maison."
+---
+
 # Granola
 
 ## Ingrédients

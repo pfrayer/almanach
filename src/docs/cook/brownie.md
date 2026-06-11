@@ -1,3 +1,7 @@
+---
+description: "Recette de brownie maison : ingrédients et étapes pour un brownie bien fondant et chocolaté."
+---
+
 # Brownie
 
 ## Ingrédients

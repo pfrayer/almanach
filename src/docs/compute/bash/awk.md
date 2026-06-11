@@ -1,3 +1,7 @@
+---
+description: "awk one-liners cheatsheet: print columns, filter lines, sum fields, count patterns and parse logs from the command line."
+---
+
 # awk
 
 ```bash

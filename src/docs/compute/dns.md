@@ -1,3 +1,7 @@
+---
+description: "DNS lookup cheatsheet: dig, nslookup and whois for records, delegation, reverse DNS and ASN IP ranges."
+---
+
 # DNS
 
 ## `dig`

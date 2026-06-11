@@ -1,3 +1,7 @@
+---
+description: "Bash scripting cheatsheet: strict mode, variable substitution, test operators, loops, trap cleanup and heredocs."
+---
+
 # Bash
 
 ## Strict mode

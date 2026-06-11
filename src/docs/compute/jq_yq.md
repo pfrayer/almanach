@@ -1,3 +1,7 @@
+---
+description: "jq and yq cheatsheet: query, filter, map and transform JSON and YAML data from the command line."
+---
+
 # `jq` / `yq`
 
 ## jq

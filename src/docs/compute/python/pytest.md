@@ -1,3 +1,7 @@
+---
+description: "pytest cheatsheet: run tests fast, select tests, debug failures, measure coverage and use markers."
+---
+
 # pytest
 
 ## Run tests fast

@@ -1,3 +1,7 @@
+---
+description: "Convert and edit images, video and PDF from the command line with ImageMagick, WebP, ffmpeg and Ghostscript."
+---
+
 # Images, videos & PDF
 
 ## Images — ImageMagick

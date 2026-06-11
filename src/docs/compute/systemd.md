@@ -1,3 +1,7 @@
+---
+description: "systemd cheatsheet: systemctl service management, journalctl logs, unit files, timers and troubleshooting."
+---
+
 # systemd
 
 ## systemctl — service management

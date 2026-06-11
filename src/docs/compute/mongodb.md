@@ -1,3 +1,7 @@
+---
+description: "MongoDB shell cheatsheet: connect, CRUD, find queries, aggregation pipelines, indexes and quick introspection."
+---
+
 # MongoDB
 
 Practical `mongosh` cheatsheet for day-to-day queries.

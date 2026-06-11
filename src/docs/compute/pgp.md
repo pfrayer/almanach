@@ -1,3 +1,7 @@
+---
+description: "PGP/GPG cheatsheet: generate and manage keys, keyservers, encrypt and decrypt, sign and verify files."
+---
+
 # PGP / GPG
 
 > PGP is the protocol, GPG (`gnupg`) is the implementation.

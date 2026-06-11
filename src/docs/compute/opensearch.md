@@ -1,3 +1,7 @@
+---
+description: "OpenSearch 2.x cluster operations: health, nodes, indices and shards, plus diagnosing unassigned shards."
+---
+
 # OpenSearch 2.x — Cluster Operations
 
 Practical cheatsheet focused on **understanding and troubleshooting** a running OpenSearch cluster. All commands use the REST API via `curl`.

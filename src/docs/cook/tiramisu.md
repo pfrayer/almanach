@@ -1,3 +1,7 @@
+---
+description: "Recette de tiramisu maison : ingrédients et étapes pour un tiramisu italien classique au mascarpone."
+---
+
 # Tiramisu
 
 ## Ingrédients

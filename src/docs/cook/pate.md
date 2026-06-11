@@ -1,3 +1,7 @@
+---
+description: "Recettes de pâtes à tarte maison : pâte brisée (et version vegan), pâte sablée et pâte feuilletée."
+---
+
 # Pâtes
 
 ## Pâte brisée

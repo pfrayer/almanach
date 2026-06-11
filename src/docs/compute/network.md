@@ -1,3 +1,7 @@
+---
+description: "Network troubleshooting cheatsheet: find your public IP, nmap scans, open ports with ss, ping, traceroute and mtr."
+---
+
 # Network
 
 ## Public IP

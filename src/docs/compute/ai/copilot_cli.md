@@ -1,3 +1,7 @@
+---
+description: "GitHub Copilot CLI cheatsheet: install, plan mode, fleet mode, slash commands, custom instructions, MCP servers and LSP support."
+---
+
 # GitHub Copilot CLI
 
 AI-powered coding assistant in the terminal. Uses the same agentic engine as GitHub's Copilot coding agent.

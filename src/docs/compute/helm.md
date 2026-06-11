@@ -1,3 +1,7 @@
+---
+description: "Helm cheatsheet: install, repositories, search and inspect charts, releases, upgrades, rollback and local templating."
+---
+
 # Helm
 
 ## Install Helm
