@@ -60,23 +60,35 @@ List locally installed versions:
 $ pyenv versions
 ```
 
+### `pyenv global`
+
+Set the default Python version system-wide:
+
+```shell
+$ pyenv global 3.12.1
+```
+
+### `pyenv shell`
+
+Override the version for the current shell session only (takes precedence over `global` and `local`):
+
+```shell
+$ pyenv shell 3.10.0
+$ pyenv shell --unset
+```
+
 ### `pyenv local`
 
-Set a local application-specific pyenv virtualenv in the current directory:
+Set the version for the current directory. Creates a `.python-version` file — pyenv reads it automatically whenever you `cd` into the directory.
 
 ```shell
 $ pwd
 # ~/workspace/my-project
-$ pyenv local my-pyenv-virtualenv-name
+$ pyenv local my-pyenv-virtualenv-name   # use a virtualenv
+$ pyenv local 3.12.1                     # or a plain Python version
 ```
 
-Set a local application-specific pyenv virtualenv in the current directory:
-
-```shell
-$ pyenv local 2.7.6
-```
-
-Unset the local version:
+Unset:
 
 ```shell
 $ pyenv local --unset
@@ -107,9 +119,23 @@ Delete an existing `virtualenv`:
 $ pyenv uninstall my-project
 ```
 
+### `pyenv which` / `pyenv exec`
+
+```shell
+# Show the full path of a binary resolved by pyenv
+$ pyenv which python
+# ~/.pyenv/versions/my-project/bin/python
+
+$ pyenv which pip
+
+# Run a command with a specific version without activating it
+$ pyenv exec python -c "import sys; print(sys.version)"
+```
+
 ## Upgrade `pyenv`
 
 ```shell
-$ cd $(pyenv root)
-$ git pull
+$ pyenv update    # requires pyenv-update plugin (installed by pyenv-installer)
+# or manually:
+$ cd $(pyenv root) && git pull
 ```

@@ -1,78 +1,253 @@
 # Git
 
-## Sign commits with a given key for a given repo
+## Configuration
 
 ```shell
-$ vim .git/config
-# add
+git config --global user.name "John Doe"
+git config --global user.email "john@example.com"
+git config --global core.editor vim
+git config --global init.defaultBranch main
+git config --global pull.rebase true          # rebase on pull by default
+
+git config --list                             # show all config
+git config --list --show-origin               # show config + file source
+```
+
+Per-repo override — edit `.git/config`:
+
+```ini
 [user]
     name = John Doe
-    email = john.doe@gmail.com
+    email = work@example.com
     signingkey = E9C202EE8524306B1859990FCF3873C85DD3C6E7
 ```
 
-## Sign old commits
+---
+
+## Repository
 
 ```shell
-# Just the last commit
-$ git commit -S --amend
-# 5 last commits
-$ git rebase --signoff HEAD~5
+git init
+git clone <url>
+git clone <url> <dir>
+git clone --depth 1 <url>                     # shallow clone (last commit only)
+git clone --branch <branch> <url>
 ```
 
-## Check git log with signature status
+---
+
+## Staging & committing
 
 ```shell
-$ git log --show-signature
-commit 389a7fd3390dbe8310085a5444233c6e955f0d89 (HEAD -> master)
-gpg: Signature made Thu 16 Jan 2025 05:36:41 PM CET
-gpg:                using EDDSA key E9C202EE8524306B1859990FCF3873C85DD3C6E7
-gpg: Good signature from "Pierre Frayer <pfrayer@xmail.com>" [ultimate]
-Author: Pierre Frayer <pfrayer@xmail.com>
-Date:   Thu Jan 16 2025 @ 5:33 PM
+git status
+git status -s                                 # short format
 
-    feat: git commit signature
+git add <file>
+git add .                                     # stage all changes
+git add -p                                    # interactive hunk staging
 
-    Signed-off-by: Pierre Frayer <pfrayer@xmail.com>
+git diff                                      # unstaged changes
+git diff --staged                             # staged vs last commit
+
+git commit -m "message"
+git commit -am "message"                      # stage tracked files + commit
+git commit --amend                            # edit last commit (message or content)
+git commit --amend --no-edit                  # amend without changing message
 ```
 
-## Fail to sign git commit
+---
 
-When doing `git commit` with GPG signature enabled, you encounter this error:
+## Branches
 
 ```shell
-$ git commit
-error: gpg failed to sign the data
-fatal: failed to write commit object
+git branch                                    # list local branches
+git branch -a                                 # list all (local + remote)
+git branch <name>                             # create branch
+git branch -d <name>                          # delete (safe)
+git branch -D <name>                          # force delete
+git branch -m <old> <new>                     # rename
+
+git switch <branch>                           # switch branch
+git switch -c <name>                          # create + switch
+git checkout -b <name> origin/<branch>        # track remote branch
 ```
 
-Get more details about the error by enabling GIT_TRACE:
+---
+
+## Remote
 
 ```shell
-$ GIT_TRACE=1 git commit
-...
-trace: built-in: git commit --amend --no-edit -n -S
-trace: run_command: gpg --status-fd=2 -bsau E9C202EE8524306B1859990FCF3873C85DD3C6E7
+git remote -v
+git remote add origin <url>
+git remote set-url origin <url>
+git remote remove <name>
+
+git fetch                                     # fetch all remotes
+git fetch origin
+git fetch --prune                             # fetch + delete stale remote refs
+
+git pull                                      # fetch + merge/rebase
+git pull --rebase                             # fetch + rebase
+
+git push origin <branch>
+git push -u origin <branch>                   # set upstream + push
+git push --force-with-lease                   # safe force push
+git push origin --delete <branch>             # delete remote branch
+git push --tags                               # push all tags
 ```
 
-Most of the time, the solution will be:
+---
+
+## Log & history
 
 ```shell
-$ export GPG_TTY=$(tty)
-$ git commit
+git log
+git log --oneline
+git log --oneline --graph --all               # visual branch graph
+git log --oneline -10                         # last 10 commits
+git log --author="John"
+git log --since="2 weeks ago"
+git log -- <file>                             # history of a file
+git log -p <file>                             # history with diffs
+
+git show <commit>
+git show HEAD~2                               # 2 commits before HEAD
+
+git blame <file>
+git blame -L 10,20 <file>                     # blame specific lines
 ```
 
-## Delete local branches that are merged in the remote repo
+---
 
-Save this somewhere (eg. `~/bin/clean-local-branches.sh`):
+## Undo
+
+```shell
+# Unstage a file (keep changes)
+git restore --staged <file>
+
+# Discard working directory changes
+git restore <file>
+
+# Undo last commit, keep changes staged
+git reset --soft HEAD~1
+
+# Undo last commit, keep changes unstaged
+git reset --mixed HEAD~1
+
+# Undo last commit, discard changes
+git reset --hard HEAD~1
+
+# Safe undo — create a new "revert" commit
+git revert <commit>
+
+# Remove untracked files
+git clean -fd                                 # files + directories
+git clean -fdn                                # dry run first
+```
+
+---
+
+## Rebase & merge
+
+```shell
+git merge <branch>
+git merge --no-ff <branch>                    # always create merge commit
+git merge --squash <branch>                   # squash all commits into one staged diff
+
+git rebase <branch>
+git rebase -i HEAD~5                          # interactive rebase (squash, reword…)
+git rebase --abort
+git rebase --continue
+
+git cherry-pick <commit>
+git cherry-pick <commit1>..<commit2>
+```
+
+---
+
+## Stash
+
+```shell
+git stash                                     # stash tracked changes
+git stash push -m "description"
+git stash push -u                             # include untracked files
+
+git stash list
+git stash pop                                 # apply latest + drop
+git stash apply stash@{2}                     # apply without dropping
+git stash drop stash@{0}
+git stash clear                               # remove all stashes
+```
+
+---
+
+## Tags
+
+```shell
+git tag                                       # list tags
+git tag <name>                                # lightweight tag
+git tag -a <name> -m "message"               # annotated tag
+git tag -a <name> <commit>                    # tag a past commit
+
+git push origin <tag>
+git push origin --tags
+
+git tag -d <name>                             # delete local tag
+git push origin --delete <tag>               # delete remote tag
+```
+
+---
+
+## GPG signing
+
+```shell
+# Sign a commit
+git commit -S -m "message"
+
+# Sign last commit (amend)
+git commit -S --amend --no-edit
+
+# Sign the last 5 commits
+git rebase --signoff HEAD~5
+
+# Check signature in log
+git log --show-signature
+```
+
+!!! tip "gpg failed to sign the data"
+    If you get `error: gpg failed to sign the data`, run:
+    ```shell
+    export GPG_TTY=$(tty)
+    ```
+    Add it to your shell profile (`~/.bashrc`, `~/.zshrc`) to make it permanent.
+
+    Debug with `GIT_TRACE=1 git commit`.
+
+---
+
+## Useful aliases
+
+Add to `~/.gitconfig`:
+
+```ini
+[alias]
+    lg = log --oneline --graph --all --decorate
+    st = status -s
+    aliases = config --get-regexp alias
+    autoremove = "!bash ~/bin/clean-local-branches.sh"
+```
+
+### Delete merged local branches
+
+Save as `~/bin/clean-local-branches.sh`:
 
 ```bash
 #!/usr/bin/env bash
 
-WHITELIST="master|prod"
+WHITELIST="master|main|prod"
 
 git fetch --prune
-TO_REMOVE=$(git branch --merged | egrep -v "(^\*|${WHITELIST})")
+TO_REMOVE=$(git branch --merged | grep -Ev "(^\*|${WHITELIST})")
 
 if [ -z "${TO_REMOVE}" ]; then
   echo "No branches to remove."
@@ -87,22 +262,11 @@ else
 fi
 ```
 
-Then in your `~/.gitconfig`:
-
-```bash
-[alias]
-    autoremove = "!bash ~/bin/clean-local-branches.sh"
-```
-
-Use it:
-
 ```shell
 $ git autoremove
 Branches to remove:
-  dev/me/dockerfile_build_and_slim
-  dev/me/troitreze
+  dev/me/my-old-branch
 
 Press any key to continue...
-Deleted branch dev/me/dockerfile_build_and_slim (was a795e10).
-Deleted branch dev/me/troitreze (was 03341ac).
+Deleted branch dev/me/my-old-branch (was a795e10).
 ```

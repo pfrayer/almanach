@@ -1,53 +1,77 @@
 # Images, videos & PDF
 
-## Reduce PDF size on Linux
-
-Use `ghostscript` to reduce PDF size without altering PDF quality too much.
+## Images — ImageMagick
 
 ```shell
-# Install ghostscript
-$ sudo apt install ghostscript
+apt install imagemagick
 
-# Use it, update input & output paths
-$ gs -dNOPAUSE \
-    -dBATCH \
-    -sDEVICE=pdfwrite \
-    -dCompatibilityLevel=1.4 \
+# Convert format
+convert image.png image.jpg
+
+# Resize to fixed dimensions
+convert image.png -resize 800x600 out.png
+
+# Resize by percentage
+convert image.png -resize 50% out.png
+
+# Strip EXIF metadata
+convert image.jpg -strip out.jpg
+
+# Batch convert all PNG → JPG
+mogrify -format jpg *.png
+```
+
+## Images — WebP
+
+```shell
+apt install webp
+
+# Encode to WebP (-q = quality 0-100)
+cwebp -q 85 image.png -o image.webp
+
+# Decode WebP → PNG
+dwebp image.webp -o image.png
+```
+
+## Video — ffmpeg
+
+```shell
+apt install ffmpeg
+
+# Convert format
+ffmpeg -i input.mov output.mp4
+
+# Extract audio
+ffmpeg -i input.mp4 -vn output.mp3
+
+# Trim (from 00:01:00, duration 30s)
+ffmpeg -i input.mp4 -ss 00:01:00 -t 30 output.mp4
+
+# Scale to 1280px wide (keep ratio)
+ffmpeg -i input.mp4 -vf scale=1280:-2 output.mp4
+
+# Extract a frame at timestamp
+ffmpeg -i input.mp4 -ss 00:00:05 -frames:v 1 frame.png
+```
+
+## PDF — Ghostscript
+
+```shell
+apt install ghostscript
+
+# Compress PDF
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
     -dPDFSETTINGS=/ebook \
-    -sOutputFile=/path/to/output.pdf \
-    /path/to/input.pdf
+    -sOutputFile=output.pdf input.pdf
 ```
 
-Here the lower quality (and thus the smallest size) is brought by the `-dPDFSETTINGS=/ebook` param.
-
-Other possible values for this params are (from lower quality to best quality):
-
-- `/screen`: low-resolution output similar to the Acrobat Distiller (up to version X) "Screen Optimized" setting.
-- `/ebook`: medium-resolution output similar to the Acrobat Distiller (up to version X) "eBook" setting.
-- `/printer`: output similar to the Acrobat Distiller "Print Optimized" (up to version X) setting.
-- `/prepress`: output similar to Acrobat Distiller "Prepress Optimized" (up to version X) setting.
-
-## Convert image to .webp format
+`-dPDFSETTINGS` values (low → high quality): `/screen` · `/ebook` · `/printer` · `/prepress`
 
 ```shell
-$ sudo apt install webp
+# Merge PDFs
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=merged.pdf a.pdf b.pdf
 
-# -q is the quality to keep in percent
-# -o is the name of the output file
-$ cwebp -q 100 my_image.png -o my_image.webp
-```
-
-## Resize images
-
-```shell
-$ sudo apt install imagemagick
-
-# Resize image in fixed dimensions
-$ convert my_image.webp -resize 200x100 my_image_resized.webp
-
-# Resize image in %
-$ convert my_image.webp -resize 700% my_image.webp
-
-# Resize big image without impacting computer memory
-$ convert -limit memory 2mb -limit map 2mb my_image.webp -resize 700% my_image.webp
+# Extract pages 2-5
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dFirstPage=2 -dLastPage=5 \
+    -sOutputFile=extract.pdf input.pdf
 ```

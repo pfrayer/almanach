@@ -2,7 +2,7 @@ site_name: Compute & Cook
 site_url: https://almanach.pateenchroot.ovh
 site_description: Computers & Cooking cheatsheets
 
-repo_name: pfayer/almanach
+repo_name: pfrayer/almanach
 repo_url: https://github.com/pfrayer/almanach
 edit_uri: https://github.com/pfrayer/almanach/tree/master/src/
 
@@ -11,13 +11,13 @@ site_dir: site
 
 nav:
 - Computers (🇬🇧):
-  - ArchLinux: docs/compute/archlinux.md
-  - AWS S3 CLI: docs/compute/aws_s3_cli.md
-  - Bash: docs/compute/bash.md
   - AI:
     - Claude Code: docs/compute/ai/claude_code.md
     - Copilot CLI: docs/compute/ai/copilot_cli.md
     - OpenCode: docs/compute/ai/opencode.md
+  - ArchLinux: docs/compute/archlinux.md
+  - AWS S3 CLI: docs/compute/aws_s3_cli.md
+  - Bash: docs/compute/bash.md
   - Debian: docs/compute/debian.md
   - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md
@@ -29,17 +29,17 @@ nav:
   - Kubernetes: docs/compute/kubernetes.md
   - Logs: docs/compute/logs.md
   - MongoDB: docs/compute/mongodb.md
+  - Network: docs/compute/network.md
   - OpenSearch: docs/compute/opensearch.md
   - PGP / GPG: docs/compute/pgp.md
   - Python:
     - General: docs/compute/python/general.md
-    - pyenv: docs/compute/python/pyenv.md
     - asyncio: docs/compute/python/asyncio.md
     - Poetry: docs/compute/python/poetry.md
+    - pyenv: docs/compute/python/pyenv.md
     - pytest: docs/compute/python/pytest.md
   - SSH: docs/compute/ssh.md
   - SSL / TLS: docs/compute/ssl.md
-  - whois: docs/compute/whois.md
 - Cooking (🇫🇷):
   - Sucré:
     - Granola: docs/cook/granola.md

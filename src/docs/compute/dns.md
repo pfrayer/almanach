@@ -1,73 +1,73 @@
 # DNS
 
-## `nslookup`
-
-Search a given record for a given domain:
-
-```shell
-$ nslookup -type=[record type] [domain]
-$ nslookup -type=A almanach.pateenchroot.ovh
-Server:     10.15.25.129
-Address:    10.15.25.129#53
-
-Non-authoritative answer:
-Name:    almanach.pateenchroot.ovh
-Address: 54.36.98.105
-```
-
 ## `dig`
 
-Basics:
-
 ```shell
-$ dig [ns server] [domain name] [record type]
-$ dig almanach.pateenchroot.ovh A
+# Basic lookup (A record)
+dig example.com
+dig example.com A
 
-; <<>> DiG 9.20.10 <<>> almanach.pateenchroot.ovh A
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36123
-;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+# Short output
+dig +short example.com
+dig +short example.com MX
+dig +short example.com TXT
+dig +short example.com NS
+dig +short example.com CNAME
 
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 1232
-;; QUESTION SECTION:
-;almanach.pateenchroot.ovh.	IN	A
+# IPv4 + IPv6 in one shot
+dig pateenchroot.ovh A pateenchroot.ovh AAAA +short
 
-;; ANSWER SECTION:
-almanach.pateenchroot.ovh. 3600	IN	A	54.36.98.105
+# Readable single-line answer
+dig +noall +answer example.com
 
-;; Query time: 16 msec
-;; SERVER: 213.186.33.99#53(213.186.33.99) (UDP)
-;; WHEN: Tue Jun 24 09:45:13 CEST 2025
-;; MSG SIZE  rcvd: 70
+# Use a specific resolver
+dig @1.1.1.1 example.com +short      # Cloudflare
+dig @8.8.8.8 example.com +short      # Google
 
+# Trace full delegation from root
+dig +trace example.com
+
+# Reverse DNS (PTR)
+dig -x 54.36.98.105 +short
+
+# Check SOA (zone serial, TTLs)
+dig example.com SOA +short
 ```
 
-More readable output:
-
 ```shell
-$ dig +noall +answer almanach.pateenchroot.ovh
-almanach.pateenchroot.ovh. 1418	IN	A	54.36.98.105
+# dig not found
+apt install dnsutils
 ```
 
-Get IPv4 & IPv6:
+---
+
+## `nslookup`
 
 ```shell
-$ dig pateenchroot.ovh A pateenchroot.ovh AAAA +short
-54.36.98.105
-2001:41d0:302:2200::2723
+nslookup example.com
+nslookup -type=A example.com
+nslookup -type=MX example.com
+nslookup -type=TXT example.com
+
+# Query a specific server
+nslookup example.com 1.1.1.1
 ```
 
-Use a specific DNS server:
+---
+
+## `whois`
 
 ```shell
-$ dig @1.1.1.1 pateenchroot.ovh +short
-54.36.98.105
-```
+# Domain lookup — registrar, expiry, nameservers
+whois example.com
+whois pateenchroot.ovh
 
-### `dig not found`
+# IP lookup — ASN, org, country
+whois 54.36.98.105
 
-```shell
-$ apt install dnsutils
+# All IP ranges for a given ASN
+whois -h whois.radb.net -- '-i origin AS16276' | grep "^route"
+# route: 2.57.18.0/24
+# route: 5.39.0.0/17
+# ...
 ```
