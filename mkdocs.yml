@@ -17,7 +17,11 @@ nav:
     - OpenCode: docs/compute/ai/opencode.md
   - ArchLinux: docs/compute/archlinux.md
   - AWS S3 CLI: docs/compute/aws_s3_cli.md
-  - Bash: docs/compute/bash.md
+  - Bash:
+    - General: docs/compute/bash/general.md
+    - awk: docs/compute/bash/awk.md
+    - sed: docs/compute/bash/sed.md
+  - curl: docs/compute/curl.md
   - Debian: docs/compute/debian.md
   - DNS: docs/compute/dns.md
   - Docker: docs/compute/docker.md
@@ -32,6 +36,7 @@ nav:
   - Network: docs/compute/network.md
   - OpenSearch: docs/compute/opensearch.md
   - PGP / GPG: docs/compute/pgp.md
+  - PostgreSQL: docs/compute/postgres.md
   - Python:
     - General: docs/compute/python/general.md
     - asyncio: docs/compute/python/asyncio.md
@@ -40,6 +45,8 @@ nav:
     - pytest: docs/compute/python/pytest.md
   - SSH: docs/compute/ssh.md
   - SSL / TLS: docs/compute/ssl.md
+  - systemd: docs/compute/systemd.md
+  - Vim: docs/compute/vim.md
 - Cooking (🇫🇷):
   - Sucré:
     - Granola: docs/cook/granola.md

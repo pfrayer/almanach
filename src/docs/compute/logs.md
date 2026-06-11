@@ -2,28 +2,7 @@
 
 ## journalctl
 
-```shell
-journalctl                                     # all logs
-journalctl -f                                  # follow (like tail -f)
-journalctl -e                                  # jump to end
-journalctl -n 100                              # last 100 lines
-
-journalctl -u nginx                            # filter by service
-journalctl -u nginx -f                         # follow a service
-journalctl -u nginx --since "1 hour ago"
-journalctl --since "2024-01-01" --until "2024-01-02 12:00"
-
-journalctl -b                                  # current boot
-journalctl -b -1                               # previous boot
-journalctl --list-boots
-
-journalctl -p err                              # filter by priority (emerg alert crit err warning notice info debug)
-journalctl -p err -u nginx
-
-journalctl -o json | jq .                      # JSON output
-journalctl --disk-usage
-journalctl --vacuum-size=500M                  # free space down to 500M
-```
+→ See [systemd — journalctl](systemd.md#journalctl----logs)
 
 ---
 
