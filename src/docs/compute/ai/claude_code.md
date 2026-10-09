@@ -1,5 +1,5 @@
 ---
-description: "Claude Code cheatsheet: install, slash commands, skills, subagents, hooks, plugins, MCP servers, permissions, extended thinking and the explore-plan-implement workflow."
+description: "Claude Code cheatsheet: install, slash commands, skills, subagents vs agent-team teammates, hooks, plugins, MCP servers, permissions, effort & thinking and the explore-plan-implement workflow."
 ---
 
 # Claude Code
@@ -62,8 +62,10 @@ $ claude setup-token
 |----------|--------|
 | ++esc++ | Interrupt Claude (stop the current operation) |
 | ++esc++ ++esc++ | Rewind: edit a previous message / restore a checkpoint |
-| ++shift+tab++ | Cycle permission mode (normal → auto-accept → plan) |
-| ++ctrl+b++ | Move the current task to the background |
+| ++shift+tab++ | Cycle permission mode (normal → auto-accept → plan → auto) |
+| ++alt+t++ | Toggle extended thinking |
+| ++ctrl+b++ | Move the running command / agent to the background |
+| ++shift+down++ | Cycle through agent-team teammates |
 | ++ctrl+c++ | Cancel input, or quit when pressed twice |
 | ++ctrl+d++ | Exit Claude Code |
 | ++ctrl+l++ | Clear terminal |
@@ -71,8 +73,7 @@ $ claude setup-token
 | ++ctrl+o++ | Toggle verbose output |
 | ++ctrl+v++ | Paste an image from the clipboard |
 | ++up++ ++down++ | Navigate conversation history |
-| `@` | Reference files / MCP resources, include contents in context |
-| `#` | Add a memory to `CLAUDE.md` |
+| `@` | Reference files / MCP resources (or mention another Claude session by name) |
 | `!` | Run a bash command directly; its output is added to context |
 | `/` | Start a slash command |
 
@@ -88,22 +89,24 @@ $ claude setup-token
 | `/context` | Visualize the current context window usage |
 | `/rewind` | Restore the conversation and/or files to an earlier checkpoint |
 | `/resume` | Resume a previous conversation |
+| `/branch` (alias `/fork`) | Fork the conversation into a new session |
+| `/btw` | Ask a side question without derailing the main task |
 | `/export` | Export the current conversation to a file |
-| `/cost` · `/usage` | Show token usage, cost and plan limits |
+| `/usage` (`/cost`, `/stats`) | Token usage, cost, prompt-cache stats and plan limits |
 
 ### Model & workflow
 
 | Command | Description |
 |---------|-------------|
 | `/model` | Select the AI model |
+| `/effort` | Set reasoning effort (`low` → `medium` → `high` → `xhigh` → `max`) |
 | `/fast` | Toggle fast mode (faster Opus output, same model) |
-| `/agents` | Manage subagents |
-| `/review` | Review a GitHub pull request |
-| `/code-review` | Review the current working diff for bugs and cleanups |
-| `/simplify` | Cleanup-only review of the current diff |
+| `/code-review [level] [pr#]` | Review the current diff or a PR for bugs (`/review` is an alias); `--comment` posts inline PR comments, `--fix` applies them |
+| `/simplify` | Cleanup-only review (reuse, simplification) of the current diff, then apply fixes |
 | `/security-review` | Security review of pending changes |
-| `/verify` | Build & run the change to confirm it works |
-| `/run` | Launch and drive the project's app |
+| `/run` | Launch and drive the project's app to see a change working |
+| `/loop [interval] <prompt>` | Re-run a prompt on an interval (`/loop 5m check the deploy`), or self-paced without interval |
+| `/schedule` | Create cron-scheduled cloud agents (routines) |
 
 ### Config & extend
 
@@ -117,7 +120,7 @@ $ claude setup-token
 | `/mcp` | Manage MCP servers and view their status |
 | `/hooks` | Browse configured hooks |
 | `/plugin` | Manage plugins and marketplaces |
-| `/output-style` | Switch the response style (default, explanatory, learning) |
+| `/output-style` | Switch the response style (default, concise, explanatory, learning) |
 | `/statusline` | Configure the status line |
 
 ### Utilities
@@ -126,26 +129,25 @@ $ claude setup-token
 |---------|-------------|
 | `/doctor` | Diagnose and check the health of your install |
 | `/team-onboarding` | Generate a teammate ramp-up guide (`ONBOARDING.md`) from your local usage, shareable via a link |
-| `/bug` | Report a bug to Anthropic |
+| `/feedback` (alias `/bug`) | Report a bug to Anthropic |
+| `/insights` | Analyse your recent sessions (e.g. how many prompts auto mode would have handled) |
 | `/release-notes` | Show what changed in recent versions |
 | `/terminal-setup` | Configure ++shift+enter++ for newlines |
-| `/vim` | Toggle vim keybindings in the input |
 | `/quit` (or `/exit`) | Exit Claude Code |
 
 !!! tip "Discover installed commands"
     `/help` lists everything available in the current project, including custom commands, bundled skills and anything a plugin adds — so it stays accurate even as the tool evolves.
 
-## Extended thinking
+## Effort & thinking
 
-Ask Claude to reason harder before acting by including a thinking keyword in your prompt. This allocates a larger reasoning budget — useful for architecture decisions, tricky debugging or multi-step planning.
+Extended thinking is on by default on recent models; toggle it with ++alt+t++ (or `alwaysThinkingEnabled` in settings). How hard Claude reasons is now driven by the **effort** level rather than by magic words in the prompt:
 
+```shell
+/effort high              # in a session (also in the /model picker)
+$ claude --effort xhigh   # at launch
 ```
-Think about how to make this service resilient to a Postgres failover, then propose a design.
 
-ultrathink about the race condition in the worker pool before touching anything.
-```
-
-Roughly ascending budget: `think` → `think hard` → `think harder` → `ultrathink`. Keep it off for routine edits — it costs tokens and time.
+Levels: `low` → `medium` → `high` → `xhigh` → `max`. Raise it for architecture decisions, tricky debugging or multi-step planning; lower it for routine edits — higher effort costs tokens and time.
 
 ## Non-interactive mode
 
@@ -159,7 +161,7 @@ $ claude -p "Explain the use of context in Go"
 $ cat error.log | claude -p "What does this error mean?"
 
 # With a specific model
-$ claude -p "Summarize this file" --model claude-opus-4-8 @src/main.py
+$ claude -p "Summarize this file" --model claude-opus-5-5 @src/main.py
 
 # Machine-readable output (useful in CI)
 $ claude -p "List the exported functions" --output-format json
@@ -174,6 +176,8 @@ $ claude -p --continue "Now add tests for that function"
 |------|-------------|
 | `-p`, `--print` | Print mode: run once and exit (headless) |
 | `--model` | Model for the session (`opus`, `sonnet`, `haiku`, or a full ID) |
+| `--effort` | Reasoning effort for the session (`low` … `max`) |
+| `-w`, `--worktree` | Start in an isolated git worktree |
 | `--fallback-model` | Model to fall back to if the primary is overloaded |
 | `-c`, `--continue` | Continue the most recent conversation |
 | `-r`, `--resume` | Resume a specific session |
@@ -198,6 +202,7 @@ $ claude doctor                # Diagnose the installation
 $ claude config               # Read / write settings from the shell
 $ claude mcp list              # Manage MCP servers (see below)
 $ claude migrate-installer     # Move from the npm install to the native binary
+$ claude agents                # Agent view: every session (running, waiting on you, done)
 $ claude --version             # Print the version
 ```
 
@@ -227,7 +232,7 @@ Claude Code reads instructions from `CLAUDE.md` files, loaded from your home dir
 4. **Project** — `./CLAUDE.md` at the repo root (commit it to share)
 5. **Local** — `./CLAUDE.local.md` (personal, gitignore it)
 
-Generate the project file with `/init`, or let Claude add entries on the fly with `#`.
+Generate the project file with `/init`, or simply ask Claude to add an entry to it.
 
 ```markdown
 # Project conventions
@@ -292,26 +297,11 @@ allowed-tools: Bash, Read, Edit
 Skills live in `.claude/skills/` (project) or `~/.claude/skills/` (global). Claude invokes a skill automatically when your request matches its `description`, or you can trigger it explicitly with `/skill-name`.
 
 !!! tip "Skill vs subagent"
-    A **skill** loads instructions into the current conversation — great for procedures and conventions. A **subagent** runs in its own context window — great for isolating heavy work (research, review) so it doesn't crowd the main thread.
+    A **skill** loads instructions into the current conversation — great for procedures and conventions. A **[subagent](claude_code_agents.md#subagents)** runs in its own context window — great for isolating heavy work (research, review) so it doesn't crowd the main thread.
 
-## Subagents
+## Subagents & teammates
 
-Subagents are specialised assistants with their own prompt, tools, and context window — useful for delegating focused tasks (code review, debugging, research) without polluting the main conversation. Manage them with `/agents`, or define one as Markdown with YAML frontmatter:
-
-```markdown
-<!-- .claude/agents/reviewer.md -->
----
-name: reviewer
-description: Reviews code for bugs and style issues
-tools: Read, Grep, Glob
-model: haiku
----
-
-You are a meticulous code reviewer. Focus on correctness,
-edge cases, and adherence to the project's conventions.
-```
-
-The optional `model` field lets a subagent run on a cheaper/faster model than the main session. Claude delegates to a subagent automatically when the task fits its `description`, or you can ask for it by name.
+Subagents, agent teams (teammates), cross-session messaging and parallel worktrees have their own page: [Claude Code — agents & teammates](claude_code_agents.md).
 
 ## Output styles
 
@@ -320,10 +310,11 @@ Change how Claude formats its responses without touching the underlying behaviou
 | Style | Behaviour |
 |-------|-----------|
 | `default` | Concise, task-focused (the standard) |
+| `concise` | Leads with results, skips preamble and narration |
 | `explanatory` | Adds insight into *why* it made each choice |
 | `learning` | Interactive — leaves small `TODO`s for you to implement |
 
-Switch with `/output-style`, or set a default in settings: `"outputStyle": "explanatory"`.
+Switch with `/output-style` or `/config` (the style is fixed at session start), or set a default in settings: `"outputStyle": "explanatory"`.
 
 ## Plugins
 
@@ -371,6 +362,7 @@ Press ++shift+tab++ to cycle between modes during a session:
 | Normal | Ask before edits and commands (default) |
 | Auto-accept edits | Apply file edits without prompting (`acceptEdits`) |
 | Plan | Read-only: Claude explores and proposes a plan, but makes no changes until you approve (`plan`) |
+| Auto | A safety classifier approves or blocks each action instead of prompting you (`auto`; tune with `autoMode` settings) |
 | Bypass | Skip every permission prompt (`bypassPermissions`) |
 
 Plan mode is ideal for "explore → plan → implement" workflows on anything non-trivial. Start a session straight in a mode with `claude --permission-mode plan`.
@@ -421,7 +413,10 @@ A hook can also influence the flow by returning JSON on stdout (e.g. `{"decision
 | `UserPromptSubmit` | When you submit a prompt (can inject context or block) |
 | `Notification` | Claude sends a system notification |
 | `Stop` | Claude finishes a response turn |
-| `SubagentStop` | A subagent finishes its turn |
+| `SubagentStart` / `SubagentStop` | A subagent starts / finishes |
+| `TeammateIdle` | An agent-team teammate is about to go idle |
+| `TaskCreated` / `TaskCompleted` | A shared task is created / marked complete |
+| `PermissionDenied` | Auto mode's classifier denied a tool call |
 | `SessionStart` / `SessionEnd` | A session starts / ends |
 | `PreCompact` | Before the conversation is compacted |
 
@@ -482,9 +477,9 @@ Settings are stored in `~/.claude/settings.json` (global) or `.claude/settings.j
 
 ```json
 {
-  "model": "claude-sonnet-4-6",
+  "model": "claude-sonnet-5-5",
   "theme": "dark",
-  "includeCoAuthoredBy": true,
+  "attribution": { "commit": "", "pr": "" },
   "cleanupPeriodDays": 30
 }
 ```
@@ -496,18 +491,19 @@ Settings are stored in `~/.claude/settings.json` (global) or `.claude/settings.j
 | `model` | Default model |
 | `theme` | `dark`, `light`, `dark-daltonism`, `light-daltonism` |
 | `outputStyle` | Default response style (see [Output styles](#output-styles)) |
-| `includeCoAuthoredBy` | Add a `Co-Authored-By: Claude` trailer to commits |
+| `attribution` | Commit / PR byline (`""` disables it; replaces the deprecated `includeCoAuthoredBy`) |
 | `cleanupPeriodDays` | Days before conversation logs are purged (default: 30) |
 | `env` | Environment variables passed to all sessions |
 | `apiKeyHelper` | Script that prints an API key/token (for rotation) |
 | `permissions` | `allow` / `deny` / `ask` rules for tools (see [Permissions](#permissions)) |
 | `enabledPlugins` | Plugins to enable for this project |
 | `statusLine` | Command that renders a custom status line |
+| `teammateMode` | How agent-team teammates are displayed (see [Subagents vs teammates](claude_code_agents.md#subagents-vs-teammates-agent-teams)) |
 | `hooks` | Lifecycle hooks (see [Hooks](#hooks)) |
 
 ## Background tasks
 
-Long-running commands (dev servers, test watchers, builds) can run in the background so the session stays interactive. Press ++ctrl+b++ while a command runs to detach it; Claude keeps a handle on its output and can check on it, read logs, or kill it later. Useful when you want Claude to start `poetry run uvicorn` and then keep working against the running server.
+Long-running commands (dev servers, test watchers, builds) can run in the background so the session stays interactive. Press ++ctrl+b++ while a command runs to detach it; Claude keeps a handle on its output and can check on it, read logs, or kill it later. Useful when you want Claude to start `poetry run uvicorn` and then keep working against the running server. Claude can also attach a **Monitor** to a background process to be woken on matching log lines instead of polling.
 
 ## Workflow: explore → plan → implement
 
@@ -532,23 +528,6 @@ Commit these changes with a descriptive message.
 !!! tip "Use plan mode for steps 1–2"
     Press ++shift+tab++ to enter plan mode so Claude explores and proposes its approach without editing any files until you approve.
 
-## Multi-agent with git worktrees
-
-Run multiple independent Claude Code sessions in parallel using git worktrees:
-
-```shell
-# Create worktrees for parallel tasks
-$ git worktree add ../feature-auth -b feature/auth
-$ git worktree add ../feature-api -b feature/api
-
-# Launch agents in each
-$ cd ../feature-auth && claude
-$ cd ../feature-api && claude    # in another terminal
-```
-
-!!! tip "Isolate long-running tasks"
-    Each worktree has its own working directory and git state, so agents can't interfere with each other.
-
 ## Tips & recommended patterns
 
 A few habits that pay off, especially on a Python/backend + CI workflow:
@@ -557,12 +536,13 @@ A few habits that pay off, especially on a Python/backend + CI workflow:
 - **Auto-format on write.** A `PostToolUse` hook running `ruff format` / `ruff check --fix` on `Write|Edit` keeps the diff clean without you asking.
 - **Plan mode for anything multi-file.** Migrations, refactors touching many modules, a new endpoint across schema + service + tests — let it lay out the approach first (++shift+tab++), review, then let it build.
 - **Package repeatable reviews as skills.** You already lean on skills (SonarQube review, schema building). Anything you re-explain more than twice — a review checklist, a project scaffold, a release procedure — belongs in a `SKILL.md`.
-- **Use the built-in review commands before pushing.** `/code-review` for bugs, `/security-review` for vulnerabilities, `/verify` to actually run the change end-to-end (not just the tests).
+- **Use the built-in review commands before pushing.** `/code-review` for bugs, `/simplify` for cleanups, `/security-review` for vulnerabilities, `/run` to actually see the change working (not just the tests).
 - **Restrict a review subagent to read-only tools** (`Read, Grep, Glob`) and put it on `haiku` — cheap, fast, and it can't accidentally edit anything.
 - **Wire it into CI / git hooks.** `claude -p "..." --output-format json` in a pipeline, or a `pre-commit` hook that asks Claude to sanity-check the staged diff.
 - **Add the GitHub MCP server** so Claude can read issues and PRs directly instead of you pasting them.
 - **Manage context deliberately.** `/clear` between unrelated tasks, `/compact` when a long session gets sluggish, `/context` to see what's eating the window.
-- **Reach for `ultrathink`** on genuinely hard design or debugging problems — and skip it for routine edits, since it costs tokens and time.
+- **Raise `/effort`** on genuinely hard design or debugging problems — and lower it for routine edits, since it costs tokens and time.
+- **Subagents before teams.** Reach for an agent team only when workers genuinely need to talk to each other; otherwise background subagents give the parallelism at a fraction of the tokens.
 
 ## Update
 

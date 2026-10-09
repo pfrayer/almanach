@@ -12,7 +12,9 @@ site_dir: site
 nav:
 - Computers (🇬🇧):
   - AI:
-    - Claude Code: docs/compute/ai/claude_code.md
+    - Claude Code:
+      - General: docs/compute/ai/claude_code.md
+      - Agents & teammates: docs/compute/ai/claude_code_agents.md
     - Copilot CLI: docs/compute/ai/copilot_cli.md
     - OpenCode: docs/compute/ai/opencode.md
   - ArchLinux: docs/compute/archlinux.md
