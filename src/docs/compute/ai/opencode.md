@@ -1,5 +1,5 @@
 ---
-description: "OpenCode cheatsheet: install, agents, slash commands, the plan-then-build workflow, MCP servers, LSP and custom commands."
+description: "OpenCode cheatsheet: install, agents, slash commands, permissions, skills, the plan-then-build workflow, MCP servers, LSP and custom commands."
 ---
 
 # OpenCode
@@ -80,20 +80,21 @@ OpenCode includes built-in agents you can switch between with ++tab++.
 | Agent | Description |
 |-------|-------------|
 | **Build** | Default agent, full tool access for development work |
-| **Plan** | Read-only agent for analysis and code exploration (edits denied by default) |
+| **Plan** | Analysis and planning agent (file edits and bash default to `ask`) |
 
 ### Subagents
 
-Invoked automatically or via `@mention` in messages.
+Invoked automatically (via the `task` tool) or with an `@mention` in messages, e.g. `@general`. Each runs in a child session: enter it with ++ctrl+x++ ++down++, cycle siblings with ++left++ / ++right++, go back to the parent with ++up++.
 
 | Agent | Description |
 |-------|-------------|
-| **General** | Full-access agent for complex searches and multi-step tasks |
-| **Explore** | Fast, read-only agent for codebase exploration |
+| **General** | Full-access agent for research and multi-step tasks, can run work in parallel |
+| **Explore** | Fast, read-only agent for finding files and searching code |
+| **Scout** | Read-only agent for external docs and dependency research |
 
 ### Custom agents
 
-Define custom agents in `opencode.json` or as markdown files in `.opencode/agents/` (project) or `~/.config/opencode/agents/` (global):
+Define custom agents in `opencode.json`, as markdown files in `.opencode/agents/` (project) or `~/.config/opencode/agents/` (global), or interactively with `opencode agent create`:
 
 ```json
 {
@@ -101,12 +102,15 @@ Define custom agents in `opencode.json` or as markdown files in `.opencode/agent
     "code-reviewer": {
       "description": "Reviews code for best practices",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-5",
-      "tools": { "write": false, "edit": false }
+      "model": "anthropic/claude-sonnet-5-5",
+      "prompt": "{file:./prompts/review.txt}",
+      "permission": { "edit": "deny", "bash": "ask" }
     }
   }
 }
 ```
+
+The old `tools` map is deprecated — restrict an agent with `permission` instead. `hidden: true` hides a subagent from the `@` menu.
 
 ## Keyboard shortcuts
 
@@ -114,6 +118,8 @@ OpenCode uses a **leader key** (default: ++ctrl+x++) for most shortcuts. Press t
 
 | Shortcut | Action |
 |----------|--------|
+| ++ctrl+p++ | Command palette |
+| ++ctrl+t++ | Cycle model variants (reasoning effort) |
 | ++ctrl+c++ | Quit |
 | ++ctrl+x++ `n` | New session |
 | ++ctrl+x++ `l` | List / switch sessions |
@@ -122,10 +128,11 @@ OpenCode uses a **leader key** (default: ++ctrl+x++) for most shortcuts. Press t
 | ++ctrl+x++ `u` | Undo last message + file changes |
 | ++ctrl+x++ `r` | Redo |
 | ++ctrl+x++ `c` | Compact (summarize) session |
-| ++ctrl+x++ `s` | Share session |
+| ++ctrl+x++ `x` | Export conversation to Markdown |
+| ++ctrl+x++ `t` | Switch theme |
 | ++ctrl+x++ `b` | Toggle sidebar |
-| ++ctrl+x++ `h` | Help |
-| ++tab++ | Cycle agents (Build ↔ Plan) |
+| ++ctrl+x++ `q` | Quit |
+| ++tab++ | Cycle primary agents (Build ↔ Plan) |
 | ++escape++ | Cancel / close overlay |
 | `@` | Reference files (fuzzy search) |
 | `!` | Run shell command directly |
@@ -136,20 +143,21 @@ OpenCode uses a **leader key** (default: ++ctrl+x++) for most shortcuts. Press t
 |---------|-------------|
 | `/connect` | Add a provider |
 | `/models` | List / select model |
-| `/init` | Generate `AGENTS.md` for the project |
-| `/new` | Start a new session |
-| `/sessions` | List and switch sessions |
-| `/undo` | Undo last message and revert file changes |
+| `/init` | Create or update `AGENTS.md` for the project (guided) |
+| `/new` (alias `/clear`) | Start a new session |
+| `/sessions` (`/resume`, `/continue`) | List and switch sessions |
+| `/undo` | Undo last message and revert file changes (needs a Git repo) |
 | `/redo` | Redo a previously undone message |
-| `/compact` | Summarize conversation to reduce context |
+| `/compact` (alias `/summarize`) | Summarize conversation to reduce context |
 | `/share` | Share session via link |
 | `/unshare` | Remove shared session |
 | `/export` | Export conversation to markdown |
 | `/editor` | Compose message in external `$EDITOR` |
 | `/themes` | Switch UI theme |
-| `/thinking` | Toggle model reasoning visibility |
+| `/thinking` | Show / hide reasoning blocks (use ++ctrl+t++ to change the reasoning level) |
+| `/details` | Toggle tool execution details |
 | `/help` | Show help |
-| `/exit` | Quit |
+| `/exit` (`/quit`, `/q`) | Quit |
 
 ## Configuration
 
@@ -167,8 +175,8 @@ TUI-specific settings go in a separate `tui.json`.
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-5",
-  "small_model": "anthropic/claude-haiku-4-5",
+  "model": "anthropic/claude-sonnet-5-5",
+  "small_model": "anthropic/claude-haiku-5-5",
   "autoupdate": true,
   "provider": {
     "anthropic": {
@@ -239,23 +247,45 @@ Then run with `/test` in the TUI. Commands support `$ARGUMENTS`, `$1`/`$2` posit
 
 | Tool | Description |
 |------|-------------|
-| `glob` | Find files by pattern |
-| `grep` | Search file contents |
-| `ls` | List directory contents |
-| `view` | View file contents |
-| `write` | Write to files |
-| `edit` | Edit files |
-| `patch` | Apply diffs to files |
-| `diagnostics` | Get LSP diagnostics |
+| `read` | Read file contents (or a line range) |
+| `write` | Create or overwrite files |
+| `edit` | Replace exact text in a file |
+| `apply_patch` | Apply a patch to the codebase |
+| `glob` | Find files by pattern (sorted by modification time) |
+| `grep` | Search file contents with regex |
+| `lsp` | Definitions, references, hover via LSP (experimental) |
 
 ### Other
 
 | Tool | Description |
 |------|-------------|
 | `bash` | Execute shell commands |
-| `fetch` | Fetch data from URLs |
-| `sourcegraph` | Search code across public repos |
-| `agent` | Delegate sub-tasks to a subagent |
+| `webfetch` | Fetch and read a web page |
+| `websearch` | Search the web |
+| `task` | Delegate a sub-task to a subagent |
+| `skill` | Load a skill's `SKILL.md` |
+| `todowrite` | Track a task list during the session |
+| `question` | Ask you a question mid-task |
+
+## Permissions
+
+Each tool can be set to `allow`, `ask` or `deny`, globally or per agent, with glob patterns for commands:
+
+```json
+{
+  "permission": {
+    "edit": "ask",
+    "bash": { "git push*": "ask", "rm -rf*": "deny", "*": "allow" },
+    "webfetch": "allow"
+  }
+}
+```
+
+`opencode --auto` auto-approves everything not explicitly denied — sandboxes only.
+
+## Skills
+
+Skills are folders with a `SKILL.md` (frontmatter `name` matching the folder, plus `description`), loaded on demand through the `skill` tool. OpenCode discovers them in `.opencode/skills/`, `.agents/skills/` and `.claude/skills/` (project, walking up to the git root) and in `~/.config/opencode/skills/`, `~/.agents/skills/`, `~/.claude/skills/` (global) — so Claude Code skills work as-is.
 
 ## Non-interactive mode
 
@@ -264,58 +294,81 @@ Run a single prompt without the TUI:
 ```shell
 $ opencode run "Explain the use of context in Go"
 
-# JSON output
-$ opencode run "Explain context in Go" -f json
+# Raw JSON events
+$ opencode run --format json "Explain context in Go"
 
-# Quiet (no spinner)
-$ opencode run "Explain context in Go" -q
+# Attach files, pick model / agent / reasoning variant
+$ opencode run -f src/main.py -m anthropic/claude-opus-5-5 --variant high "Review this file"
+
+# Continue the last session
+$ opencode run -c "Now add tests"
+```
+
+### Other CLI commands
+
+```shell
+$ opencode serve               # Headless server (attach with `opencode attach <url>` or `run --attach`)
+$ opencode web                 # Server + web UI
+$ opencode pr 142              # Check out PR #142 and start opencode on it
+$ opencode github install      # Set up the GitHub agent (runs in GitHub Actions)
+$ opencode stats               # Token usage and cost
+$ opencode models              # List available models
+$ opencode mcp add             # Add an MCP server
+$ opencode plugin <module>     # Install a plugin and update the config
+$ opencode upgrade             # Self-update
 ```
 
 ## LSP support
 
-OpenCode uses LSP for code intelligence. Install the server for your language, then configure:
+OpenCode ships built-in LSP servers (some auto-installed; disable downloads with `OPENCODE_DISABLE_LSP_DOWNLOAD`). LSP is **disabled by default** — once enabled, a server starts when a matching file is opened. Add or disable servers under `lsp`:
 
 ```json
 {
   "lsp": {
-    "python": { "command": "pylsp" },
-    "go": { "command": "gopls" },
-    "typescript": {
-      "command": "typescript-language-server",
-      "args": ["--stdio"]
-    }
+    "custom-lsp": {
+      "command": ["custom-lsp-server", "--stdio"],
+      "extensions": [".custom"]
+    },
+    "typescript": { "disabled": true }
   }
 }
 ```
 
 ## MCP servers
 
-OpenCode supports MCP via `stdio`, `http`, and `sse` transports:
+OpenCode supports `local` (stdio) and `remote` (HTTP, with OAuth auto-detection) MCP servers:
 
 ```json
 {
   "mcp": {
     "github": {
-      "type": "http",
+      "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
-        "Authorization": "Bearer $GH_PAT"
+        "Authorization": "Bearer {env:GH_PAT}"
       }
     },
     "filesystem": {
-      "type": "stdio",
-      "command": "node",
-      "args": ["/path/to/mcp-server.js"]
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/projects"],
+      "environment": { "MY_ENV_VAR": "value" },
+      "enabled": true
     }
   }
 }
 ```
 
+Note that `command` is an **array**. Each server also accepts `timeout` (ms, default 5000); remote ones take an `oauth` object (or `false`).
+
 ## Custom instructions
 
-OpenCode reads project instructions from `AGENTS.md` at the project root. Generate it with `/init`.
+OpenCode reads project instructions from `AGENTS.md` (walking up from the current directory) and global ones from `~/.config/opencode/AGENTS.md`. Generate the project file with `/init`.
 
-You can also provide global instructions at `~/.config/opencode/agents/`.
+For Claude Code compatibility it falls back to `CLAUDE.md` / `~/.claude/CLAUDE.md` when no `AGENTS.md` exists (disable with `OPENCODE_DISABLE_CLAUDE_CODE=1`). Extra files (paths, globs or URLs) can be added with the `instructions` config key:
+
+```json
+{ "instructions": ["CONTRIBUTING.md", "docs/guidelines/*.md"] }
+```
 
 ## Copilot CLI vs OpenCode
 
@@ -324,14 +377,14 @@ You can also provide global instructions at `~/.config/opencode/agents/`.
 | License | Proprietary | Open source (MIT) |
 | Auth | GitHub subscription | API keys (any provider) |
 | Multi-provider | GitHub models only | 75+ providers (Anthropic, OpenAI, Gemini, Groq, Bedrock, Azure…) |
-| MCP | ✅ (`stdio`) | ✅ (`stdio`, `http`, `sse`) |
+| MCP | ✅ (`stdio`) | ✅ (`local`, `remote` + OAuth) |
 | LSP | ✅ | ✅ |
-| TUI | Minimal | Rich (Bubble Tea) |
+| TUI | Minimal | Rich (OpenTUI), plus web UI and headless server |
 | Desktop app | ❌ | ✅ (beta) |
 | GitHub integration | Native (PRs, issues, search) | Via MCP |
 | Session management | ✅ | ✅ |
 | Plan mode | ✅ `/plan` | ✅ Plan agent (++tab++) |
-| Fleet / parallel agents | ✅ `/fleet` | ❌ |
+| Fleet / parallel agents | ✅ `/fleet` | Subagents (`@general`, `task` tool) |
 | Custom commands | ❌ | ✅ |
 | Themes | ❌ | ✅ |
 | Undo / redo file changes | `/rewind` | `/undo` `/redo` (git-based) |
