@@ -60,7 +60,10 @@ nav:
       - Chocolat-pécan: docs/cook/cookies/chocolat_pecan.md
       - Matcha-chocolat: docs/cook/cookies/matcha_chocolat.md
   - Salé:
-    - Pâtes: docs/cook/pate.md
+    - Pâtes:
+      - Brisée: docs/cook/pates/brisee.md
+      - Sablée: docs/cook/pates/sablee.md
+      - Feuilletée: docs/cook/pates/feuilletee.md
     - Moussaka: docs/cook/moussaka.md
     - Aubergines teriyaki: docs/cook/aubergine_roties.md
     - Pad see ew: docs/cook/pad_see_ew.md
