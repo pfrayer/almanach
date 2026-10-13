@@ -1,6 +1,7 @@
 site_name: Compute & Cook
 site_url: https://almanach.pateenchroot.ovh
 site_description: Computers & Cooking cheatsheets
+copyright: Compute & Cook · cheatsheets & recettes, tenus à la main
 
 repo_name: pfrayer/almanach
 repo_url: https://github.com/pfrayer/almanach
@@ -129,6 +130,9 @@ plugins:
     minify_html: true
     htmlmin_opts:
       remove_comments: true
+
+extra:
+  generator: false
 
 extra_css:
 - assets/css/fonts.css

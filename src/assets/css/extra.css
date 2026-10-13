@@ -294,9 +294,9 @@
   }
 
   /* Reading panel: the article sits on frosted white instead of directly on
-     the gradient, so contrast no longer depends on scroll position. Index
-     pages are already made of frosted cards: no panel behind them. */
-  .md-content__inner:not(:has(.grid.cards)) {
+     the gradient, so contrast no longer depends on scroll position. Home, 404
+     and index pages are already made of frosted cards: no panel behind them. */
+  .md-content__inner:not(:has(.grid.cards, .home-hero)) {
     padding: 1rem 1.6rem 1.2rem;
     border-radius: 0.6rem;
     background-color: hsla(0, 0%, 100%, 0.62);
@@ -305,7 +305,7 @@
     box-shadow: 0 0.4rem 1.2rem hsla(0, 0%, 0%, 0.08);
   }
 
-  .md-content__inner:not(:has(.grid.cards))::before {
+  .md-content__inner:not(:has(.grid.cards, .home-hero))::before {
     display: none;
   }
 
@@ -316,7 +316,7 @@
   }
 
   @media screen and (max-width: 44.9375em) {
-    .md-content__inner:not(:has(.grid.cards)) {
+    .md-content__inner:not(:has(.grid.cards, .home-hero)) {
       margin: 0 0.4rem 1rem;
       padding: 0.6rem 0.8rem 1rem;
     }
@@ -475,6 +475,37 @@
     .home-hero h1 {
       font-size: 2rem;
     }
+  }
+
+  /* 404: the home hero and doors, plus a way into search. */
+  .not-found h1 {
+    font-size: 4rem;
+    letter-spacing: -0.04em;
+  }
+
+  .not-found p + p {
+    margin-top: 0.2rem;
+  }
+
+  .md-typeset .not-found__search {
+    margin-top: 1.4rem;
+    border-color: #b34700;
+    color: #b34700;
+    cursor: pointer;
+  }
+
+  .md-typeset .not-found__search:hover,
+  .md-typeset .not-found__search:focus-visible {
+    border-color: #b34700;
+    background-color: #b34700;
+    color: #fff;
+  }
+
+  /* Home, index and 404 pages are navigation, not documents: no "view
+     source" button. The GitHub star/fork counters add noise everywhere. */
+  .md-content__inner:has(.home-hero, .grid.cards) > .md-content__button,
+  .md-source__facts {
+    display: none;
   }
 
   /* ===========================================================

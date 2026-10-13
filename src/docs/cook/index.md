@@ -7,6 +7,8 @@ hide:
 
 # Recettes
 
+[Sucré](#sucre) · [Salé](#sale) · [Bases](#bases)
+
 ## Sucré
 
 <div class="grid cards" markdown>
