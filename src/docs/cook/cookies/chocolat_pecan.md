@@ -36,4 +36,4 @@ Pour 24 cookies de 40 g. Préparation : 20 min. Réfrigération : 15 min. Cuisso
 10. **Pivoter la plaque** et laissez cuire encore 6 minutes. Le cookie est cuit quand une belle couronne dorée se forme sur son contour.
 11. **Déguster** encore tiède, de préférence.
 
-Recette de Nicolas Paciello.
+Recette de Nicolas Paciello, tirée du livre « Le cookie de nos rêves ».

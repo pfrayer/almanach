@@ -32,4 +32,4 @@ Pour 16 cookies de 40 g. Préparation : 10 min. Cuisson : 10 min à 160 °C (cha
 !!! tip
     Le matcha a un goût franc, presque herbacé. Le chocolat noir garde de l'amertume ; le chocolat au lait ou blanc apporte de la douceur et enrobe le matcha.
 
-Recette tirée d'un livre de recettes de cookies (p. 58).
+Recette tirée du livre « Le cookie de nos rêves ».
