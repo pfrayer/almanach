@@ -20,20 +20,22 @@
     --md-default-fg-color--lightest: hsla(var(--md-hue), 75%, 90%, 0.12);
 }
 
-[data-md-color-scheme="slate"] {
-    --md-hue: 220;
-    --md-default-bg-color: hsla(0, 0%, 14%, 0.6);
-    --md-code-bg-color: hsla(0, 0%, 0%, 0.2);
-  }
-
+  /* Dark text on the light gradient background: white failed contrast on
+     headings, sidebar titles and icons. */
   [data-md-color-scheme="default"] {
     --md-hue: 220;
-    --md-default-fg-color--light: white;
-    --md-default-fg-color--lighter: hsla(0, 0%, 100%, 0.6);
+    --md-default-fg-color: hsla(0, 0%, 0%, 0.87);
+    --md-default-fg-color--light: hsla(0, 0%, 0%, 0.65);
+    --md-default-fg-color--lighter: hsla(0, 0%, 0%, 0.4);
     --md-default-bg-color: hsla(0, 0%, 100%, 0.8);
     --md-code-bg-color: hsla(0, 0%, 100%, 0.6);
     --md-code-bg-color--lighter: hsla(0, 0%, 100%, 0.6);
-    --md-default-fg-color: white;
+  }
+
+  /* Darker orange for links: Material's #e68a00 is too pale on the beige
+     parts of the background. Same specificity as Material's palette rule. */
+  [data-md-color-scheme="default"][data-md-color-primary="orange"] {
+    --md-typeset-a-color: #b34700;
   }
 
   [data-md-color-scheme="default"] .md-search__inner {
@@ -58,30 +60,6 @@
     border: 0.05rem solid var(--md-default-fg-color--lighter);
     border-radius: 0.1rem;
     content: "/";
-  }
-
-  [data-md-color-scheme="default"][data-md-color-primary="black"] {
-    [data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
-      color: var(--md-default-bg-color--lighter);
-      border-color: var(--md-default-bg-color--lighter);
-    }
-  }
-
-  #carbonads {
-    margin-top: 10px;
-  }
-
-  #carbon-responsive {
-    --carbon-padding: 1em;
-    --carbon-max-char: 20ch;
-    --carbon-bg-primary: var(--md-default-bg-color) !important;
-    --carbon-bg-secondary: var(--md-default-fg-color--lightest) !important;
-    --carbon-text-color: var(--md-typeset-color) !important;
-  }
-
-  [data-md-color-scheme="default"] .carbon-text {
-    color: var(--md-code-fg-color) !important;
-    --carbon-text-color: #313131 !important;
   }
 
   .md-typeset__table {
@@ -130,53 +108,21 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    backdrop-filter: blur(64px);
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .md-typeset h1 {
-    color: #fff;
-  }
-
-  body[data-md-color-scheme="default"] {
-    color: rgba(255, 255, 255, 1);
     color: black;
   }
 
-  .blur-overlay {
-    z-index: -1;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: hsl(0deg 0% 0% / 10%);
-    backdrop-filter: blur(128px);
-    -webkit-backdrop-filter: blur(128px);
+  .md-typeset h1 {
+    color: var(--md-default-fg-color);
+    font-weight: 400;
   }
 
-  [data-md-color-scheme="default"] .blur-overlay {
-    background: hsla(0, 0%, 0%, 0);
-  }
-
+  /* Sticky sidebar titles: frosted background so scrolled links don't show
+     through them. */
   .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
   .md-nav--secondary .md-nav__title {
-    background: none;
-    box-shadow: none;
-  }
-
-  [data-md-color-scheme="slate"] .md-main,
-  [data-md-color-scheme="slate"] .md-tabs,
-  [data-md-color-scheme="slate"] .md-footer {
-    background-color: hsla(0, 0%, 0%, 0.3);
-  }
-
-  /* [data-md-color-scheme="default"] .md-main,
-  [data-md-color-scheme="default"] .md-tabs,
-  [data-md-color-scheme="default"] .md-footer {
-    background-color: hsla(0, 0%, 100%, 0.1);
-  } */
-
-  [data-md-color-scheme="slate"] .md-header {
-    background-color: hsla(0, 0%, 0%, 0.3);
+    background: hsla(0, 0%, 100%, 0.85);
+    box-shadow: 0 0 0.3rem 0.3rem hsla(0, 0%, 100%, 0.85);
+    border-radius: 0.2rem;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
@@ -195,11 +141,6 @@
 
   .md-footer-meta {
     background-color: transparent;
-  }
-
-  [data-md-color-scheme="slate"][data-md-color-primary="black"],
-  [data-md-color-scheme="default"][data-md-color-primary="black"] {
-    --md-typeset-a-color: #ffffff;
   }
 
   .md-content__inner a {
@@ -226,17 +167,6 @@
     background-color: #36464ecc;
   }
 
-  /* I know this is a farce, but I want it to look nice. */
-  .css-9if7bc {
-    background-color: hsla(0, 0%, 0%, 0.3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  @media screen and (max-width: 76.234375em) {
-    .md-nav--primary,
-  }
-
   @media screen and (max-width: 76.234375em) {
     .md-nav--primary .md-nav__title ~ .md-nav__list {
       backdrop-filter: blur(16px);
@@ -255,18 +185,24 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
-  .md-search-result .md-typeset h1 {
-    color: #fff;
-  }
-
   [data-md-color-scheme="default"] .highlight span.filename,
   [data-md-color-scheme="default"] .linenodiv a {
     color: #36464e;
-    font-weight: light;
+    font-weight: 300;
   }
 
   .linenodiv a {
     text-decoration: none;
+  }
+
+  /* Copy / select buttons on code blocks: no light box behind them, and an
+     icon visible on the dark code background. */
+  .md-code__nav {
+    background-color: transparent;
+  }
+
+  .md-code__button {
+    color: hsla(var(--md-hue), 75%, 90%, 0.5);
   }
 
   .md-typeset .admonition,
@@ -275,14 +211,32 @@
     color: #1a1a1a;
   }
 
-  [data-md-color-scheme="slate"] .md-typeset .admonition,
-  [data-md-color-scheme="slate"] .md-typeset details {
-    background-color: hsla(0, 0%, 0%, 0.3);
-    color: inherit;
+  /* Index pages: frosted cards, clickable as a whole when they hold a
+     single link. */
+  .md-typeset .grid.cards > ul > li {
+    position: relative;
+    background-color: hsla(0, 0%, 100%, 0.55);
+    border-color: hsla(0, 0%, 100%, 0.6);
+    border-radius: 0.4rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .md-typeset .grid.cards > ul > li:hover {
+    background-color: hsla(0, 0%, 100%, 0.75);
+  }
+
+  .md-typeset .grid.cards > ul > li > p:first-child > a:only-child {
+    text-decoration: none;
+  }
+
+  .md-typeset .grid.cards > ul > li > p:first-child > a:only-child::after {
+    content: "";
+    position: absolute;
+    inset: 0;
   }
 
   .md-typeset img,
-  .md-typeset svg,
   .md-typeset video {
     box-shadow: 0 0 1rem 0.25rem hsla(0, 0%, 0%, 0.1);
   }
@@ -319,6 +273,7 @@
 
   .md-tabs__link {
     transform: translateZ(0);
+    opacity: 0.85;
   }
 
   .md-main .md-grid {
@@ -335,6 +290,8 @@
   }
 
   .home-hero h1 {
+    color: #fff;
+    text-shadow: 0 0.1rem 0.6rem hsla(0, 0%, 0%, 0.25);
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 1.15;
@@ -473,3 +430,33 @@
       font-size: 2rem;
     }
   }
+
+  /* ===========================================================
+     Mobile drawer
+     =========================================================== */
+
+  @media screen and (max-width: 76.234375em) {
+    /* Wider drawer: 12.1rem truncated long recipe names. */
+    .md-sidebar--primary {
+      --drawer-width: min(16rem, 85vw);
+      width: var(--drawer-width);
+    }
+
+    [dir=ltr] .md-sidebar--primary {
+      left: calc(-1 * var(--drawer-width));
+    }
+
+    [data-md-toggle=drawer]:checked ~ .md-container .md-sidebar--primary {
+      transform: translateX(var(--drawer-width));
+    }
+
+    /* One compact line per level ("← Cooking", "← Sucré") instead of a
+       5.6rem block each, so the links fit on screen. */
+    .md-nav--primary .md-nav .md-nav__title {
+      height: 2.4rem;
+      padding: 0 0.8rem 0 2.4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
