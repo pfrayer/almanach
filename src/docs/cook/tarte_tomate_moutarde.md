@@ -22,7 +22,7 @@ Repos de la pâte : 30 min minimum. Cuisson : 35 min à 200 °C.
 | Huile d'olive | Un filet | Pour les oignons et la finition |
 | Moutarde à l'ancienne | 1 à 2 grosses c. à s. | |
 | Chapelure | 1 à 2 c. à s. | |
-| Ail en poudre | Une pincée | |
+| Ail en poudre | 1 pincée | |
 | **Finition** | | |
 | Burrata ou stracciatella | 1 | |
 | Basilic | Quelques feuilles | Facultatif |

@@ -4,7 +4,7 @@ description: "Recette de polenta crémeuse au saint-nectaire, avec lardons fumé
 
 # Polenta crémeuse au saint-nectaire, lardons fumés et chanterelles
 
-Pour 2 à 3 personnes. Prête en 20 minutes environ.
+Pour 2 à 3 personnes. Préparation et cuisson : environ 20 min.
 
 ## Ingrédients
 

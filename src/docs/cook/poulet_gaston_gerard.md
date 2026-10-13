@@ -4,13 +4,13 @@ description: "Recette du poulet Gaston Gérard : poulet mijoté dans une sauce a
 
 # Poulet Gaston Gérard
 
-Cuisson : environ 1 h (30 min à feu doux puis 15 min sous le gril).
+Pour 4 personnes. Cuisson : environ 1 h (30 min à feu doux puis 15 min sous le gril).
 
 ## Ingrédients
 
-Pour 4 personnes. Les quantités sont indicatives, à ajuster.
+Les quantités sont indicatives, à ajuster.
 
-| Ingrédient | Quantité indicative | Remarque |
+| Ingrédient | Quantité | Remarque |
 |---|---|---|
 | **Poulet et sauce** | | |
 | Poulet | 1 poulet découpé (environ 1,5 kg) ou 4 cuisses | Salé avant cuisson |

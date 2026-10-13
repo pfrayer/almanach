@@ -22,7 +22,7 @@ Pour environ 1 kg de granola. Préparation : 20 min. Cuisson : 40 à 50 min à 1
 
 ## Étapes
 
-1. **Préchauffer le four** à 150 °C et tapisser une plaque à pâtisserie de papier sulfurisé.
+1. **Préchauffer le four** à 150 °C. Tapissez une plaque à pâtisserie de papier sulfurisé.
 2. **Mélanger :** dans un saladier, mélangez bien les flocons d'avoine, les noix de pécan, les graines de tournesol, les graines de courge, les copeaux de coco, l'huile d'olive, le sirop d'érable, le sucre roux et la fleur de sel.
 3. **Étaler** le mélange de manière uniforme sur la plaque.
 4. **Enfourner** 40 à 50 minutes, en remuant avec une cuillère en métal toutes les 10 à 15 minutes. Le mélange doit blondir sans trop colorer : il sera croustillant, avec un bon goût de grillé.
