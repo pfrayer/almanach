@@ -24,6 +24,8 @@ Content lives under `src/` (configured via `docs_dir: src` in `mkdocs.yml`). The
 
 Custom theming uses glassmorphism-style CSS in `src/assets/css/` (backdrop blur, transparent overlays). Fonts are self-hosted under `src/assets/fonts/`.
 
+Theme overrides live in `overrides/` (`custom_dir`): pages under `src/docs/cook/` get a French interface and `<html lang="fr">` through `src/docs/cook/.meta.yml` (`locale: fr`), the rest stays in English. `hooks/recipes.py` marks up recipe pages at build time; `src/assets/js/` holds the small client scripts (language sync on instant navigation, ingredient checklist).
+
 ## Conventions
 
 ### Content language
@@ -33,7 +35,8 @@ Compute docs are in English. Cooking docs are in French. **Always write in the s
 ### Adding a new page
 
 1. Create the markdown file in the appropriate `src/docs/` subdirectory
-2. Add the page to the `nav:` section in `mkdocs.yml` — it won't appear in navigation otherwise
+2. Add the page to the `nav:` section in `mkdocs.yml` — it won't appear in navigation otherwise. Keep each group sorted alphabetically
+3. Add it to its section's index page: a card in `src/docs/cook/index.md` (title link plus a one-line summary) or a line in the alphabetical list of `src/docs/compute/index.md`
 
 ### Recipe format
 
@@ -41,6 +44,7 @@ All recipes follow this format (reference: `src/docs/cook/focaccia.md`):
 
 1. Frontmatter with a one-sentence French `description`
 2. `# Title`, then one line with servings and times, in this order: `Pour 4 personnes. Préparation : 20 min. Repos : 30 min. Cuisson : 25 min à 180 °C.` Only include what is known — never invent servings or durations
+   `hooks/recipes.py` turns this line into chips at build time: keep it a single paragraph right before `## Ingrédients`, sentences separated by `. `, labels written `Label : valeur`
 3. `## Ingrédients`: a `| Ingrédient | Quantité | Remarque |` table (`|---|---|---|`, no column padding), with bold rows (`| **Pâte** | | |`) to group ingredients
 4. `## Étapes`: numbered list starting at 1, each step opening with a bold title (`1. **Préchauffer le four** à 200 °C.` or `2. **Former la pâte :** …`)
 5. Optional `!!! tip` admonition for storage, equipment, substitutions or variants

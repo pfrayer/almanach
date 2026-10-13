@@ -1,0 +1,10 @@
+{#-
+  Override of Material's partials/language.html: a page can set its own
+  interface language with `locale` in its front matter (or a `.meta.yml`),
+  so the French recipes get `<html lang="fr">` and French labels while the
+  English cheatsheets keep the site default.
+-#}
+{% set code = page.meta.locale if page and page.meta and page.meta.locale else config.theme.language %}
+{% import "partials/languages/" ~ code ~ ".html" as lang %}
+{% import "partials/languages/en.html" as fallback %}
+{% macro t(key) %}{{ lang.t(key) or fallback.t(key) or key }}{% endmacro %}

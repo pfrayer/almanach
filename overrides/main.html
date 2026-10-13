@@ -1,0 +1,10 @@
+{#-
+  Marks the page's language inside the content, which Material swaps on
+  instant navigation (unlike <html lang>): assets/js/language.js reads it
+  back to keep <html lang> and the search placeholder in sync.
+-#}
+{% extends "base.html" %}
+{% block content %}
+  {{ super() }}
+  <span hidden data-page-lang="{{ page.meta.locale if page.meta and page.meta.locale else config.theme.language }}"></span>
+{% endblock %}

@@ -1,0 +1,4 @@
+# Front matter applied to every page under docs/cook/ (Material's meta plugin).
+# `locale` switches the interface language (overrides/partials/language.html)
+# and the date format of git-revision-date-localized.
+locale: fr

@@ -1,39 +1,13 @@
-.highlight {
-    --md-hue: 232;
-    --md-code-fg-color: #eceff1;
-    --md-code-bg-color: var(--md-code-bg-color-block);
-    --md-code-hl-color: rgba(66, 135, 255, 0.15);
-    --md-code-hl-number-color: #fbc02d;
-    --md-code-hl-special-color: #78d9ec;
-    --md-code-hl-function-color: #d7aefb;
-    --md-code-hl-constant-color: #d7aefb;
-    --md-code-hl-keyword-color: #78d9ec;
-    --md-code-hl-string-color: #9ccc65;
-    --md-code-hl-name-color: #d7aefb;
-    --md-code-hl-operator-color: #78d9ec;
-    --md-code-hl-punctuation-color: #eceff1;
-    --md-code-hl-comment-color: #ff8bcb;
-    --md-code-hl-generic-color: #eceff1;
-    --md-code-hl-variable-color: #ff8bcb;
-    --md-default-fg-color--light: hsla(var(--md-hue), 75%, 90%, 0.62);
-    --md-default-fg-color--lighter: hsla(var(--md-hue), 75%, 90%, 0.32);
-    --md-default-fg-color--lightest: hsla(var(--md-hue), 75%, 90%, 0.12);
-}
-
-[data-md-color-scheme="slate"] {
-    --md-hue: 220;
-    --md-default-bg-color: hsla(0, 0%, 14%, 0.6);
-    --md-code-bg-color: hsla(0, 0%, 0%, 0.2);
-  }
-
+  /* Dark text on the light gradient background: white failed contrast on
+     headings, sidebar titles and icons. */
   [data-md-color-scheme="default"] {
     --md-hue: 220;
-    --md-default-fg-color--light: white;
-    --md-default-fg-color--lighter: hsla(0, 0%, 100%, 0.6);
+    --md-default-fg-color: hsla(0, 0%, 0%, 0.87);
+    --md-default-fg-color--light: hsla(0, 0%, 0%, 0.65);
+    --md-default-fg-color--lighter: hsla(0, 0%, 0%, 0.4);
     --md-default-bg-color: hsla(0, 0%, 100%, 0.8);
     --md-code-bg-color: hsla(0, 0%, 100%, 0.6);
     --md-code-bg-color--lighter: hsla(0, 0%, 100%, 0.6);
-    --md-default-fg-color: white;
   }
 
   [data-md-color-scheme="default"] .md-search__inner {
@@ -58,30 +32,6 @@
     border: 0.05rem solid var(--md-default-fg-color--lighter);
     border-radius: 0.1rem;
     content: "/";
-  }
-
-  [data-md-color-scheme="default"][data-md-color-primary="black"] {
-    [data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
-      color: var(--md-default-bg-color--lighter);
-      border-color: var(--md-default-bg-color--lighter);
-    }
-  }
-
-  #carbonads {
-    margin-top: 10px;
-  }
-
-  #carbon-responsive {
-    --carbon-padding: 1em;
-    --carbon-max-char: 20ch;
-    --carbon-bg-primary: var(--md-default-bg-color) !important;
-    --carbon-bg-secondary: var(--md-default-fg-color--lightest) !important;
-    --carbon-text-color: var(--md-typeset-color) !important;
-  }
-
-  [data-md-color-scheme="default"] .carbon-text {
-    color: var(--md-code-fg-color) !important;
-    --carbon-text-color: #313131 !important;
   }
 
   .md-typeset__table {
@@ -130,55 +80,21 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    backdrop-filter: blur(64px);
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .md-typeset h1 {
-    color: #fff;
-  }
-
-  body[data-md-color-scheme="default"] {
-    color: rgba(255, 255, 255, 1);
     color: black;
   }
 
-  .blur-overlay {
-    z-index: -1;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: hsl(0deg 0% 0% / 10%);
-    backdrop-filter: blur(128px);
-    -webkit-backdrop-filter: blur(128px);
+  .md-typeset h1 {
+    color: var(--md-default-fg-color);
+    font-weight: 400;
   }
 
-  [data-md-color-scheme="default"] .blur-overlay {
-    background: hsla(0, 0%, 0%, 0);
-  }
-
+  /* Sidebar titles stay transparent on the background; they scroll with
+     their list instead of sticking, so links never slide underneath them. */
   .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
   .md-nav--secondary .md-nav__title {
+    position: static;
     background: none;
     box-shadow: none;
-  }
-
-  [data-md-color-scheme="slate"] .md-main,
-  [data-md-color-scheme="slate"] .md-tabs,
-  [data-md-color-scheme="slate"] .md-footer {
-    background-color: hsla(0, 0%, 0%, 0.3);
-  }
-
-  /* [data-md-color-scheme="default"] .md-main,
-  [data-md-color-scheme="default"] .md-tabs,
-  [data-md-color-scheme="default"] .md-footer {
-    background-color: hsla(0, 0%, 100%, 0.1);
-  } */
-
-  [data-md-color-scheme="slate"] .md-header {
-    background-color: hsla(0, 0%, 0%, 0.3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
   }
 
   [data-md-color-scheme="default"] .md-header {
@@ -197,9 +113,9 @@
     background-color: transparent;
   }
 
-  [data-md-color-scheme="slate"][data-md-color-primary="black"],
-  [data-md-color-scheme="default"][data-md-color-primary="black"] {
-    --md-typeset-a-color: #ffffff;
+  /* Browser surfaces in the site's colours. */
+  ::selection {
+    background-color: hsla(28, 100%, 50%, 0.28);
   }
 
   .md-content__inner a {
@@ -219,22 +135,11 @@
   }
 
   [data-md-color-scheme="default"] .highlight .c1 {
-    color:lightslategray;
+    color: #a3acbf;
   }
 
   [data-md-color-scheme="default"] .md-annotation__index:after {
     background-color: #36464ecc;
-  }
-
-  /* I know this is a farce, but I want it to look nice. */
-  .css-9if7bc {
-    background-color: hsla(0, 0%, 0%, 0.3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  @media screen and (max-width: 76.234375em) {
-    .md-nav--primary,
   }
 
   @media screen and (max-width: 76.234375em) {
@@ -255,18 +160,26 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
-  .md-search-result .md-typeset h1 {
-    color: #fff;
-  }
-
+  /* Line numbers and file names sit on the dark code background: light
+     grey (~5:1), not the dark slate that measured 1.3:1. */
   [data-md-color-scheme="default"] .highlight span.filename,
   [data-md-color-scheme="default"] .linenodiv a {
-    color: #36464e;
-    font-weight: light;
+    color: #9aa3b5;
+    font-weight: 300;
   }
 
   .linenodiv a {
     text-decoration: none;
+  }
+
+  /* Copy / select buttons on code blocks: no light box behind them, and an
+     icon visible on the dark code background. */
+  .md-code__nav {
+    background-color: transparent;
+  }
+
+  .md-code__button {
+    color: hsla(var(--md-hue), 75%, 90%, 0.5);
   }
 
   .md-typeset .admonition,
@@ -275,40 +188,39 @@
     color: #1a1a1a;
   }
 
-  [data-md-color-scheme="slate"] .md-typeset .admonition,
-  [data-md-color-scheme="slate"] .md-typeset details {
-    background-color: hsla(0, 0%, 0%, 0.3);
-    color: inherit;
+  /* Index pages: frosted cards, clickable as a whole when they hold a
+     single link. */
+  .md-typeset .grid.cards > ul > li {
+    position: relative;
+    background-color: hsla(0, 0%, 100%, 0.55);
+    border-color: hsla(0, 0%, 100%, 0.6);
+    border-radius: 0.4rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
+  .md-typeset .grid.cards > ul > li:hover {
+    background-color: hsla(0, 0%, 100%, 0.75);
+  }
+
+  .md-typeset .grid.cards > ul > li > p:first-child > a:only-child {
+    text-decoration: none;
+  }
+
+  .md-typeset .grid.cards > ul > li > p:first-child > a:only-child::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  /* One depth for everything that floats on the page: a soft shadow cast
+     downwards. Callouts keep their colour in Material's border and icon. */
   .md-typeset img,
-  .md-typeset svg,
-  .md-typeset video {
-    box-shadow: 0 0 1rem 0.25rem hsla(0, 0%, 0%, 0.1);
-  }
-
-  .highlight {
-    box-shadow: 0 0 1rem 0.25rem hsla(0, 0%, 0%, 0.1);
-  }
-
-  .md-typeset .admonition.tip,
-  .md-typeset details.tip {
-    box-shadow: 0 0 1rem 0.25rem hsl(171.83deg 100% 37.45% / 20%);
-  }
-
-  .md-typeset .admonition.note,
-  .md-typeset details.note {
-    box-shadow: 0 0 1rem 0.25rem hsl(214.29deg 100% 37.45% / 20%);
-  }
-
-  .md-typeset .admonition.warning,
-  .md-typeset details.warning {
-    box-shadow: 0 0 1rem 0.25rem hsl(40.91deg 100% 37.45% / 20%);
-  }
-
-  .md-typeset .admonition.danger,
-  .md-typeset details.danger {
-    box-shadow: 0 0 1rem 0.25rem hsl(0deg 100% 37.45% / 20%);
+  .md-typeset video,
+  .highlight,
+  .md-typeset .admonition,
+  .md-typeset details {
+    box-shadow: 0 0.3rem 0.9rem -0.2rem hsla(0, 0%, 0%, 0.14);
   }
 
   [data-md-color-scheme="default"] .md-typeset kbd {
@@ -334,7 +246,9 @@
     margin: 3.5rem 0 3rem;
   }
 
+  /* Dark ink: white measured ~1.7:1 on the pale cyan behind it. */
   .home-hero h1 {
+    color: hsla(0, 0%, 0%, 0.87);
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 1.15;
@@ -471,5 +385,234 @@
     }
     .home-hero h1 {
       font-size: 2rem;
+    }
+  }
+
+  /* 404: the home hero and doors, plus a way into search. */
+  .not-found h1 {
+    font-size: 4rem;
+    letter-spacing: -0.04em;
+  }
+
+  .not-found p + p {
+    margin-top: 0.2rem;
+  }
+
+  .md-typeset .not-found__search {
+    margin-top: 1.4rem;
+    border-color: var(--md-typeset-a-color);
+    color: var(--md-typeset-a-color);
+    cursor: pointer;
+  }
+
+  .md-typeset .not-found__search:hover,
+  .md-typeset .not-found__search:focus-visible {
+    border-color: var(--md-typeset-a-color);
+    background-color: var(--md-typeset-a-color);
+    color: #fff;
+  }
+
+  /* Home, index and 404 pages are navigation, not documents: no "view
+     source" button. The GitHub star/fork counters add noise everywhere. */
+  .md-content__inner:has(.home-hero, .grid.cards) > .md-content__button,
+  .md-source__facts {
+    display: none;
+  }
+
+  /* ===========================================================
+     Mobile drawer
+     =========================================================== */
+
+  @media screen and (max-width: 76.234375em) {
+    /* Wider drawer: 12.1rem truncated long recipe names. */
+    .md-sidebar--primary {
+      --drawer-width: min(16rem, 85vw);
+      width: var(--drawer-width);
+    }
+
+    [dir=ltr] .md-sidebar--primary {
+      left: calc(-1 * var(--drawer-width));
+    }
+
+    [data-md-toggle=drawer]:checked ~ .md-container .md-sidebar--primary {
+      transform: translateX(var(--drawer-width));
+    }
+
+    /* One compact line per level ("← Cooking", "← Sucré") instead of a
+       5.6rem block each, so the links fit on screen. */
+    .md-nav--primary .md-nav .md-nav__title {
+      height: 2.4rem;
+      padding: 0 0.8rem 0 2.4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  /* ===========================================================
+     Recipes (markup from hooks/recipes.py, behaviour from
+     assets/js/recipe.js)
+     =========================================================== */
+
+  /* Servings and times, as a row of facts under the title. Selectors match
+     Material's list rules (`.md-typeset ul:not([hidden])`) to override them. */
+  .md-typeset ul.recipe-facts:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.4rem;
+    margin: 0 0 1.6em;
+    padding: 0;
+    list-style: none;
+  }
+
+  [dir] .md-typeset ul.recipe-facts > li {
+    margin: 0;
+  }
+
+  .recipe-facts__label {
+    font-weight: 700;
+  }
+
+  .md-typeset table[data-ingredients] td:nth-child(2) {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .md-typeset table[data-ingredients] tr.ingredients__group td {
+    padding-top: 1.2em;
+    letter-spacing: 0.02em;
+  }
+
+  .md-typeset table[data-ingredients] tbody tr:not(.ingredients__group) {
+    cursor: pointer;
+  }
+
+  /* Tick box drawn in front of the ingredient name. */
+  .md-typeset table[data-ingredients] tbody tr:not(.ingredients__group) td:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.6em;
+    vertical-align: -0.15em;
+    border: 0.1rem solid var(--md-default-fg-color--lighter);
+    border-radius: 0.25em;
+    background-color: hsla(0, 0%, 100%, 0.6);
+  }
+
+  .md-typeset table[data-ingredients] tbody tr.ingredients__row--done td:first-child::before {
+    border-color: var(--md-typeset-a-color);
+    background: var(--md-typeset-a-color) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 85% no-repeat;
+  }
+
+  .md-typeset table[data-ingredients] tbody tr.ingredients__row--done td {
+    color: var(--md-default-fg-color--light);
+    text-decoration: line-through;
+    text-decoration-color: hsla(0, 0%, 0%, 0.5);
+  }
+
+  .md-typeset table[data-ingredients] tbody tr:focus-visible {
+    outline: 2px solid var(--md-typeset-a-color);
+    outline-offset: -2px;
+  }
+
+  /* Hint and "Tout décocher", above each ingredients table. */
+  .ingredients-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .md-typeset .ingredients-bar__hint {
+    margin: 0;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.7rem;
+  }
+
+  .ingredients-bar__reset {
+    padding: 0.3rem 0;
+    color: var(--md-typeset-a-color);
+    font: inherit;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+
+  /* Phones: two columns. The note moves under the ingredient name, the
+     quantity stays right-aligned, and each row is a comfortable tap target. */
+  @media screen and (max-width: 44.9375em) {
+    .md-typeset table[data-ingredients],
+    .md-typeset table[data-ingredients] tbody {
+      display: block;
+    }
+
+    .md-typeset table[data-ingredients] thead {
+      display: none;
+    }
+
+    .md-typeset table[data-ingredients] tr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 1rem;
+      min-height: 2.4rem;
+      padding: 0.6rem 0.8rem;
+      border-top: 0.05rem solid var(--md-typeset-table-color);
+    }
+
+    .md-typeset table[data-ingredients] tr:first-child {
+      border-top: none;
+    }
+
+    .md-typeset table[data-ingredients] td {
+      padding: 0;
+      border: none;
+    }
+
+    .md-typeset table[data-ingredients] td:empty {
+      display: none;
+    }
+
+    .md-typeset table[data-ingredients] td:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .md-typeset table[data-ingredients] td:nth-child(3) {
+      grid-column: 1 / -1;
+      padding-left: 1.6em;
+      color: var(--md-default-fg-color--light);
+      font-size: 0.9em;
+    }
+
+    .md-typeset table[data-ingredients] tr.ingredients__group td {
+      padding-top: 0.4rem;
+    }
+  }
+
+  /* ===========================================================
+     Print: plain page, no background or frosted panels
+     =========================================================== */
+
+  @media print {
+    body {
+      background: none !important;
+    }
+
+    .md-typeset .grid.cards > ul > li,
+    .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
+    .md-nav--secondary .md-nav__title {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .md-typeset table[data-ingredients] tbody tr.ingredients__row--done td {
+      color: inherit;
+      text-decoration: none;
     }
   }

@@ -33,10 +33,6 @@
     white-space : pre-wrap !important;
 }
 
-[data-md-color-scheme=slate] > * {
-    --md-code-bg-color-block: hsla(var(--md-hue), 20%, 18%, 1) !important;
-}
-
 .highlight .l {
     color: #eceff1;
 }
@@ -55,4 +51,12 @@
 
 .md-tooltip__inner.md-typeset {
     font-size: 1em;
+}
+
+/* Phones: wrapping pushes inline comments onto lines of their own and breaks
+   the line numbers; scroll sideways instead. */
+@media screen and (max-width: 44.9375em) {
+    .highlight code {
+        white-space: pre !important;
+    }
 }

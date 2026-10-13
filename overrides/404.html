@@ -1,0 +1,23 @@
+{#-
+  404: bilingual (the missing page could be a recipe or a cheatsheet), with a
+  way out: search, or one of the two sections. Reuses the home page doors.
+-#}
+{% extends "main.html" %}
+{% block content %}
+  <section class="home-hero not-found">
+    <h1>404</h1>
+    <p lang="fr">Cette page a brûlé, ou n'a jamais existé.</p>
+    <p lang="en">This page doesn't exist (anymore).</p>
+    <label class="md-button not-found__search" for="__search">Rechercher · Search</label>
+  </section>
+  <nav class="home-doors" aria-label="Sections">
+    <a class="home-door" href="{{ 'docs/compute/' | url }}">
+      <span class="home-door__icon" aria-hidden="true">💻</span>
+      <span class="home-door__title">Computers</span>
+    </a>
+    <a class="home-door" href="{{ 'docs/cook/' | url }}">
+      <span class="home-door__icon" aria-hidden="true">🍳</span>
+      <span class="home-door__title">Cooking <span class="home-door__flag">🇫🇷</span></span>
+    </a>
+  </nav>
+{% endblock %}
