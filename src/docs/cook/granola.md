@@ -31,4 +31,4 @@ Pour environ 1 kg de granola. Préparation : 20 min. Cuisson : 40 à 50 min à 1
 !!! tip
     Le granola se conserve plusieurs semaines dans un récipient hermétique.
 
-Recette de Tina Kobakhidze, patronne du Bleuet (coffee shop, Paris 8e).
+Recette de Tina Kobakhidze, patronne du Bleuet (coffee shop, Paris 8e), tirée du livre « Recettes & Récits » de François-Régis Gaudry.
