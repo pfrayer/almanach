@@ -472,12 +472,6 @@
     font-weight: 700;
   }
 
-  /* The table you glance at mid-recipe: same size as the steps (16px), not
-     Material's 12.8px table text. */
-  .md-typeset table[data-ingredients] {
-    font-size: inherit;
-  }
-
   .md-typeset table[data-ingredients] td:nth-child(2) {
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
@@ -485,7 +479,6 @@
 
   .md-typeset table[data-ingredients] tr.ingredients__group td {
     padding-top: 1.2em;
-    font-size: 0.7rem;
     letter-spacing: 0.02em;
   }
 
@@ -594,7 +587,7 @@
       grid-column: 1 / -1;
       padding-left: 1.6em;
       color: var(--md-default-fg-color--light);
-      font-size: 0.7rem;
+      font-size: 0.9em;
     }
 
     .md-typeset table[data-ingredients] tr.ingredients__group td {
