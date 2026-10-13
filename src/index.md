@@ -14,11 +14,11 @@ hide:
 </section>
 
 <nav class="home-doors" aria-label="Sections">
-  <a class="home-door" href="docs/compute/ai/claude_code/">
+  <a class="home-door" href="docs/compute/">
     <span class="home-door__icon" aria-hidden="true">💻</span>
     <span class="home-door__title">Computers</span>
   </a>
-  <a class="home-door" href="docs/cook/granola/">
+  <a class="home-door" href="docs/cook/">
     <span class="home-door__icon" aria-hidden="true">🍳</span>
     <span class="home-door__title">Cooking <span class="home-door__flag">🇫🇷</span></span>
   </a>

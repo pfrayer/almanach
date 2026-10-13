@@ -10,7 +10,8 @@ docs_dir: src
 site_dir: site
 
 nav:
-- Computers (🇬🇧):
+- Computers 🇬🇧:
+  - docs/compute/index.md
   - AI:
     - Claude Code:
       - General: docs/compute/ai/claude_code.md
@@ -49,30 +50,31 @@ nav:
   - SSL / TLS: docs/compute/ssl.md
   - systemd: docs/compute/systemd.md
   - Vim: docs/compute/vim.md
-- Cooking (🇫🇷):
+- Cooking 🇫🇷:
+  - docs/cook/index.md
   - Sucré:
-    - Granola: docs/cook/granola.md
-    - Tiramisu: docs/cook/tiramisu.md
     - Brownie: docs/cook/brownie.md
-    - Flan pâtissier: docs/cook/flan.md
     - Cookies:
       - Beurre noisette et fleur de sel: docs/cook/cookies/beurre_noisette.md
       - Chocolat-pécan: docs/cook/cookies/chocolat_pecan.md
       - Matcha-chocolat: docs/cook/cookies/matcha_chocolat.md
+    - Flan pâtissier: docs/cook/flan.md
+    - Granola: docs/cook/granola.md
+    - Tiramisu: docs/cook/tiramisu.md
   - Salé:
-    - Pâtes:
-      - Brisée: docs/cook/pates/brisee.md
-      - Sablée: docs/cook/pates/sablee.md
-      - Feuilletée: docs/cook/pates/feuilletee.md
-    - Moussaka: docs/cook/moussaka.md
     - Aubergines teriyaki: docs/cook/aubergine_roties.md
+    - Focaccia: docs/cook/focaccia.md
+    - Moussaka: docs/cook/moussaka.md
     - Pad see ew: docs/cook/pad_see_ew.md
     - Polenta fromagère: docs/cook/polenta_fromagere.md
     - Poulet Gaston Gérard: docs/cook/poulet_gaston_gerard.md
-    - Tarte tomate moutarde: docs/cook/tarte_tomate_moutarde.md
-    - Focaccia: docs/cook/focaccia.md
-    - Tartiflette et croziflette: docs/cook/tartiflette.md
     - Poulet karaage: docs/cook/karaage.md
+    - Tarte tomate moutarde: docs/cook/tarte_tomate_moutarde.md
+    - Tartiflette et croziflette: docs/cook/tartiflette.md
+  - Bases:
+    - Pâte brisée: docs/cook/pates/brisee.md
+    - Pâte feuilletée: docs/cook/pates/feuilletee.md
+    - Pâte sablée: docs/cook/pates/sablee.md
 
 theme:
   name: material
@@ -91,11 +93,13 @@ theme:
   - content.code.copy
   - content.code.select
   - navigation.expand
+  - navigation.footer
   - navigation.indexes
   - navigation.instant
   - navigation.path
   - navigation.tabs
   - navigation.tabs.sticky
+  - navigation.top
   - navigation.tracking
   - search.highlight
   - search.suggest
@@ -109,8 +113,11 @@ plugins:
     - en
     - fr
 - git-revision-date-localized:
-    type: datetime
+    type: date
     fallback_to_build_date: true
+    exclude:
+    - index.md
+    - docs/*/index.md
 - minify:
     minify_html: true
     htmlmin_opts:
