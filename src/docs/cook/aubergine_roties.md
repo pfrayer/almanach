@@ -18,7 +18,7 @@ Rôtissage : 30 à 40 min à 200 °C. Finition à la poêle : quelques minutes.
 | Miel | 1 c. à s. | |
 | Sucre de canne | 1 c. à c. | |
 | Ail | 1 gousse | Hachée |
-| Gingembre frais | 1 pouce (environ 2,5 cm) | Râpé, indispensable |
+| Gingembre frais | 1 morceau (environ 2,5 cm) | Râpé, indispensable |
 | **Liaison** | | |
 | Fécule de maïs | ½ c. à c. | |
 | Eau | 4 cl | Pour délayer la fécule |

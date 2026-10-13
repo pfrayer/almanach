@@ -4,31 +4,36 @@ description: "Recette de tiramisu maison : ingrédients et étapes pour un tiram
 
 # Tiramisu
 
+Repos : idéalement une nuit au frais.
+
 ## Ingrédients
 
-| Ingrédient                               | Quantité                           |
-|------------------------------------------|------------------------------------|
-| Mascarpone                               | 250 g                              |
-| Boudoir / biscuits cuillère              | 30                                 |
-| Sucre                                    | 100 g                              |
-| Œufs                                     | 4                                  |
-| Café allongé froid (un bon bol)          | 1                                  |
-| Gousse de vanille                        | 1                                  |
-| Sucre glace                              | 2 cuil. à soupe                    |
-| Cacao en poudre non sucré                | 2 cuil. à soupe                    |
+| Ingrédient | Quantité | Remarque |
+|---|---|---|
+| **Crème** | | |
+| Œufs | 4 | Blancs et jaunes séparés |
+| Sucre | 100 g | |
+| Gousse de vanille | 1 | |
+| Mascarpone | 250 g | |
+| **Biscuits** | | |
+| Café allongé | 1 bon bol | Froid |
+| Biscuits cuillère | 30 | |
+| **Finition** | | |
+| Sucre glace | 2 c. à s. | |
+| Cacao en poudre non sucré | 2 c. à s. | |
 
 ## Étapes
 
-0. Faites couler un café allongé et laissez refroidir dans un bol
-1. Séparez les blancs des jaunes d'oeuf et réservez les blancs
-2. Fouettez les jaunes d'oeuf avec le sucre jusqu'à obtention d'un mélange bien mousseux
-3. Couper la gousse de vanille en deux. Prélevez les grains, les rajouter au mélange et bien mélanger
-4. Mettre les deux moitiés de gousse de vanille (qui n'ont plus leurs grains) dans le café pendant qu'il refroidit
-5. Dans un saladier détendez le mascarpone avec un fouet, et ajoutez le mélange d'oeuf et sucre, mélangez délicatement à la spatule
-6. Fouettez les blancs en neige bien fermes, et ajoutez les, délicatement à la préparation
-7. Trempez les biscuits cuillère dans le café froid 5 secondes, qu'ils soient imbibés mais pas trop, disposez-les au fond du plat bien collé les uns aux autres
-8. Recouvrez d'une couche de préparation, et recommencez une fois l'opération. Vous avez donc, en partant du bas: une couche de biscuits, une couche de crème, une couche de biscuits, une couche de crème
-9. Laissez prendre au frais, idéalement une nuit
-10. Avant de servir, saupoudrez d'une couche de sucre glace, puis d'une couche de cacao en poudre
+1. **Préparer le café :** faites couler un café allongé et laissez-le refroidir dans un bol.
+2. **Séparer les œufs :** séparez les blancs des jaunes et réservez les blancs.
+3. **Blanchir les jaunes :** fouettez les jaunes avec le sucre jusqu'à obtenir un mélange bien mousseux.
+4. **Ajouter la vanille :** fendez la gousse de vanille en deux, prélevez les graines et ajoutez-les au mélange. Mélangez bien.
+5. **Parfumer le café :** plongez les deux moitiés de gousse vidées dans le café pendant qu'il refroidit.
+6. **Détendre le mascarpone :** dans un saladier, détendez le mascarpone au fouet, puis ajoutez le mélange œufs et sucre. Mélangez délicatement à la spatule.
+7. **Monter les blancs** en neige bien ferme et incorporez-les délicatement à la préparation.
+8. **Tremper les biscuits** 5 secondes dans le café froid, pour qu'ils soient imbibés mais pas trop. Disposez-les au fond du plat, bien serrés les uns contre les autres.
+9. **Monter le tiramisu :** recouvrez d'une couche de crème, puis recommencez une fois. Vous avez donc, en partant du bas : biscuits, crème, biscuits, crème.
+10. **Laisser prendre** au frais, idéalement une nuit.
+11. **Saupoudrer** de sucre glace puis de cacao en poudre juste avant de servir.
 
-[Source](https://www.hervecuisine.com/recette/tiramisu-traditionnel-au-cafe-et-speculoos/){target=_blank}
+[Source : Hervé Cuisine](https://www.hervecuisine.com/recette/tiramisu-traditionnel-au-cafe-et-speculoos/){target=_blank}

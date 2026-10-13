@@ -4,37 +4,40 @@ description: "Recette de flan pâtissier maison : la version simple et des varia
 
 # Flan pâtissier
 
-## Le basic
+## Version simple
+
+Repos : 30 min de congélation du fond de tarte, plus 1 h facultative avant cuisson. Cuisson : 45 min à 170 °C.
 
 ### Ingrédients
 
-| Ingrédient           | Quantité      |
-|----------------------|---------------|
-| Pâte feuilletée      | 1             |
-| Œufs                 | 2 entiers     |
-| Jaunes d'œufs        | 4             |
-| Maizéna              | 45 g          |
-| Sucre                | 150 g         |
-| Lait                 | 40 cl         |
-| Crème entière liquide| 20 cl         |
-| Gousse de vanille    | 1             |
+| Ingrédient | Quantité | Remarque |
+|---|---|---|
+| Pâte feuilletée | 1 | |
+| Œufs | 2 | Entiers |
+| Jaunes d'œufs | 4 | |
+| Maïzena | 45 g | |
+| Sucre | 150 g | |
+| Lait | 40 cl | |
+| Crème liquide entière | 20 cl | |
+| Gousse de vanille | 1 | |
 
-## Étapes de la recette
+### Étapes
 
-1. Foncez la pâte feuilletée dans un cercle ou un moule à tarte. Avec les chutes, doublez les contours
-2. Réservez au congélateur 30 minutes
-3. Fouettez les 2 œufs + les 4 jaunes avec le sucre et la Maizéna
-4. Faites chauffer le lait et la crème, infusez la gousse de vanille et les graines
-5. Versez en plusieurs fois en mélangeant le lait chaud sur les œufs, et remettez le tout sur le feu pendant 10 minutes en mélangeant
-6. Faites refroidir la préparation
-7. Versez ensuite dans le fond de pâte feuilletée
-8. Facultatif : laissez refroidir le tout au congélateur 1 heure si vous avez le temps
-9. Enfournez 45 min à 170°C.
+1. **Foncer le moule :** foncez la pâte feuilletée dans un cercle ou un moule à tarte. Avec les chutes, doublez les contours.
+2. **Congeler le fond de tarte** pendant 30 minutes.
+3. **Fouetter les œufs :** fouettez les 2 œufs et les 4 jaunes avec le sucre et la Maïzena.
+4. **Infuser la vanille :** faites chauffer le lait et la crème, et faites-y infuser la gousse de vanille fendue et ses graines.
+5. **Cuire la crème :** versez le lait chaud sur les œufs en plusieurs fois, en mélangeant, puis remettez le tout sur le feu pendant 10 minutes sans cesser de mélanger.
+6. **Laisser refroidir** la préparation.
+7. **Garnir :** versez-la dans le fond de pâte feuilletée.
+8. **Congeler** le tout 1 heure si vous avez le temps (facultatif).
+9. **Enfourner** 45 minutes à 170 °C.
 
-Peut aussi se faire avec une pâte brisée caramélisée: avant de mettre la pâte dans le moule, étalez du sucre sur le fond et les bords du moule et saupoudrez de sucre (pas trop, juste une fine couche). Posez la pâte par dessus. A la cuisson, la pâte va caraméliser.
+!!! tip
+    Le flan peut aussi se faire avec une pâte brisée caramélisée : avant de mettre la pâte dans le moule, saupoudrez le fond et les bords du moule d'une fine couche de sucre, puis posez la pâte par-dessus. À la cuisson, la pâte va caraméliser.
 
-[Source](https://www.hervecuisine.com/recette/recette-du-flan-patissier-la-vanille/){target=_blank}
+[Source : Hervé Cuisine](https://www.hervecuisine.com/recette/recette-du-flan-patissier-la-vanille/){target=_blank}
 
-## Le(s) complexe(s)
+## Versions élaborées
 
-[Parlons Flan](https://axelle.me/2023/05/29/parlons-flan/){target=_blank}
+[Source : Parlons flan](https://axelle.me/2023/05/29/parlons-flan/){target=_blank}

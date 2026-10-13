@@ -73,7 +73,6 @@ nav:
     - Focaccia: docs/cook/focaccia.md
     - Tartiflette et croziflette: docs/cook/tartiflette.md
     - Poulet karaage: docs/cook/karaage.md
-    - Sans gluten: docs/cook/no_gluten.md
 
 theme:
   name: material

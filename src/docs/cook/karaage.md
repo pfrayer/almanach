@@ -27,7 +27,7 @@ Pour 4 personnes. Préparation : 15 min. Marinade : 30 min. Cuisson : environ 15
 | **Service** | | |
 | Citron | Quelques quartiers | |
 | Mayonnaise japonaise (Kewpie) | Au goût | |
-| Shichimi togarashi | Une pincée | Facultatif, sur la mayonnaise |
+| Shichimi togarashi | 1 pincée | Facultatif, sur la mayonnaise |
 
 ## Étapes
 
