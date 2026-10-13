@@ -33,10 +33,6 @@
     white-space : pre-wrap !important;
 }
 
-[data-md-color-scheme=slate] > * {
-    --md-code-bg-color-block: hsla(var(--md-hue), 20%, 18%, 1) !important;
-}
-
 .highlight .l {
     color: #eceff1;
 }

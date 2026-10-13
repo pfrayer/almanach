@@ -1,25 +1,3 @@
-.highlight {
-    --md-hue: 232;
-    --md-code-fg-color: #eceff1;
-    --md-code-bg-color: var(--md-code-bg-color-block);
-    --md-code-hl-color: rgba(66, 135, 255, 0.15);
-    --md-code-hl-number-color: #fbc02d;
-    --md-code-hl-special-color: #78d9ec;
-    --md-code-hl-function-color: #d7aefb;
-    --md-code-hl-constant-color: #d7aefb;
-    --md-code-hl-keyword-color: #78d9ec;
-    --md-code-hl-string-color: #9ccc65;
-    --md-code-hl-name-color: #d7aefb;
-    --md-code-hl-operator-color: #78d9ec;
-    --md-code-hl-punctuation-color: #eceff1;
-    --md-code-hl-comment-color: #ff8bcb;
-    --md-code-hl-generic-color: #eceff1;
-    --md-code-hl-variable-color: #ff8bcb;
-    --md-default-fg-color--light: hsla(var(--md-hue), 75%, 90%, 0.62);
-    --md-default-fg-color--lighter: hsla(var(--md-hue), 75%, 90%, 0.32);
-    --md-default-fg-color--lightest: hsla(var(--md-hue), 75%, 90%, 0.12);
-}
-
   /* Dark text on the light gradient background: white failed contrast on
      headings, sidebar titles and icons. */
   [data-md-color-scheme="default"] {
@@ -120,8 +98,10 @@
      through them. */
   .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
   .md-nav--secondary .md-nav__title {
+    margin-inline: -0.4rem;
+    padding: 0.2rem 0.4rem;
     background: hsla(0, 0%, 100%, 0.95);
-    box-shadow: 0 0 0.5rem 0.5rem hsla(0, 0%, 100%, 0.95);
+    box-shadow: 0 0 0.3rem 0.3rem hsla(0, 0%, 100%, 0.95);
     border-radius: 0.2rem;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -143,6 +123,15 @@
     background-color: transparent;
   }
 
+  /* Browser surfaces in the site's colours. */
+  ::selection {
+    background-color: hsla(28, 100%, 50%, 0.28);
+  }
+
+  :root {
+    accent-color: #b34700;
+  }
+
   .md-content__inner a {
     text-decoration: underline;
     font-weight: bolder;
@@ -160,7 +149,7 @@
   }
 
   [data-md-color-scheme="default"] .highlight .c1 {
-    color:lightslategray;
+    color: #a3acbf;
   }
 
   [data-md-color-scheme="default"] .md-annotation__index:after {
@@ -185,9 +174,11 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
+  /* Line numbers and file names sit on the dark code background: light
+     grey (~5:1), not the dark slate that measured 1.3:1. */
   [data-md-color-scheme="default"] .highlight span.filename,
   [data-md-color-scheme="default"] .linenodiv a {
-    color: #36464e;
+    color: #9aa3b5;
     font-weight: 300;
   }
 
@@ -236,33 +227,25 @@
     inset: 0;
   }
 
+  /* One depth for everything that floats on the page: a soft shadow cast
+     downwards. Callouts keep their colour in Material's border and icon. */
   .md-typeset img,
-  .md-typeset video {
-    box-shadow: 0 0 1rem 0.25rem hsla(0, 0%, 0%, 0.1);
-  }
-
+  .md-typeset video,
   .highlight {
-    box-shadow: 0 0 1rem 0.25rem hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0.3rem 0.9rem -0.2rem hsla(0, 0%, 0%, 0.14);
   }
 
-  .md-typeset .admonition.tip,
-  .md-typeset details.tip {
-    box-shadow: 0 0 1rem 0.25rem hsl(171.83deg 100% 37.45% / 20%);
+  /* Inside the reading panel, tables and callouts are sections of the page,
+     not cards on top of it: no shadow, a hairline instead. */
+  .md-content__inner .md-typeset__table table:not([class]),
+  .md-typeset .admonition,
+  .md-typeset details {
+    box-shadow: none;
   }
 
-  .md-typeset .admonition.note,
-  .md-typeset details.note {
-    box-shadow: 0 0 1rem 0.25rem hsl(214.29deg 100% 37.45% / 20%);
-  }
-
-  .md-typeset .admonition.warning,
-  .md-typeset details.warning {
-    box-shadow: 0 0 1rem 0.25rem hsl(40.91deg 100% 37.45% / 20%);
-  }
-
-  .md-typeset .admonition.danger,
-  .md-typeset details.danger {
-    box-shadow: 0 0 1rem 0.25rem hsl(0deg 100% 37.45% / 20%);
+  .md-content__inner .md-typeset__table table:not([class]) {
+    border: 0.05rem solid hsla(0, 0%, 0%, 0.08);
+    background-color: hsla(0, 0%, 100%, 0.55);
   }
 
   [data-md-color-scheme="default"] .md-typeset kbd {
