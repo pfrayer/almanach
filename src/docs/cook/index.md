@@ -37,6 +37,10 @@ hide:
 
     Noix de pécan, graines et coco, au sirop d'érable.
 
+-   [**Madeleines de maman**](madeleines.md)
+
+    La recette de famille, ultra moelleuse après une nuit au frigo.
+
 -   [**Tiramisu**](tiramisu.md)
 
     Le classique italien au mascarpone.
