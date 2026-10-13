@@ -1,4 +1,4 @@
-FROM python:3.15-bookworm
+FROM python:3.15-trixie
 
 WORKDIR /docs
 COPY . /docs/
