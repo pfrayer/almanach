@@ -9,6 +9,9 @@ edit_uri: https://github.com/pfrayer/almanach/tree/master/src/
 docs_dir: src
 site_dir: site
 
+hooks:
+- hooks/recipes.py
+
 nav:
 - Computers 🇬🇧:
   - docs/compute/index.md

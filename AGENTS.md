@@ -42,6 +42,7 @@ All recipes follow this format (reference: `src/docs/cook/focaccia.md`):
 
 1. Frontmatter with a one-sentence French `description`
 2. `# Title`, then one line with servings and times, in this order: `Pour 4 personnes. Préparation : 20 min. Repos : 30 min. Cuisson : 25 min à 180 °C.` Only include what is known — never invent servings or durations
+   `hooks/recipes.py` turns this line into chips at build time: keep it a single paragraph right before `## Ingrédients`, sentences separated by `. `, labels written `Label : valeur`
 3. `## Ingrédients`: a `| Ingrédient | Quantité | Remarque |` table (`|---|---|---|`, no column padding), with bold rows (`| **Pâte** | | |`) to group ingredients
 4. `## Étapes`: numbered list starting at 1, each step opening with a bold title (`1. **Préchauffer le four** à 200 °C.` or `2. **Former la pâte :** …`)
 5. Optional `!!! tip` admonition for storage, equipment, substitutions or variants
