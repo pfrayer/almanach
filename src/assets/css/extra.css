@@ -289,9 +289,9 @@
     margin: 3.5rem 0 3rem;
   }
 
+  /* Dark ink: white measured ~1.7:1 on the pale cyan behind it. */
   .home-hero h1 {
-    color: #fff;
-    text-shadow: 0 0.1rem 0.6rem hsla(0, 0%, 0%, 0.25);
+    color: hsla(0, 0%, 0%, 0.87);
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 1.15;
