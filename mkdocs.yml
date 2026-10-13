@@ -17,46 +17,43 @@ nav:
 - Computers 🇬🇧:
   - docs/compute/index.md
   - AI:
-    - Claude Code: docs/compute/ai/claude_code.md
-    - Claude Code agents: docs/compute/ai/claude_code_agents.md
+    - Claude Code:
+      - General: docs/compute/ai/claude_code.md
+      - Agents & teammates: docs/compute/ai/claude_code_agents.md
     - Copilot CLI: docs/compute/ai/copilot_cli.md
     - OpenCode: docs/compute/ai/opencode.md
-  - Shell:
-    - Bash: docs/compute/bash/general.md
+  - ArchLinux: docs/compute/archlinux.md
+  - AWS S3 CLI: docs/compute/aws_s3_cli.md
+  - Bash:
+    - General: docs/compute/bash/general.md
     - awk: docs/compute/bash/awk.md
     - sed: docs/compute/bash/sed.md
-    - jq / yq: docs/compute/jq_yq.md
-    - curl: docs/compute/curl.md
-    - Vim: docs/compute/vim.md
+  - curl: docs/compute/curl.md
+  - Debian: docs/compute/debian.md
+  - DNS: docs/compute/dns.md
+  - Docker: docs/compute/docker.md
+  - Git: docs/compute/git.md
+  - GitHub Actions: docs/compute/github_actions.md
+  - Helm: docs/compute/helm.md
+  - Images, videos, PDF: docs/compute/images.md
+  - jq / yq: docs/compute/jq_yq.md
+  - Kubernetes: docs/compute/kubernetes.md
+  - Logs: docs/compute/logs.md
+  - MongoDB: docs/compute/mongodb.md
+  - Network: docs/compute/network.md
+  - OpenSearch: docs/compute/opensearch.md
+  - PGP / GPG: docs/compute/pgp.md
+  - PostgreSQL: docs/compute/postgres.md
   - Python:
     - General: docs/compute/python/general.md
     - asyncio: docs/compute/python/asyncio.md
     - Poetry: docs/compute/python/poetry.md
     - pyenv: docs/compute/python/pyenv.md
     - pytest: docs/compute/python/pytest.md
-  - Containers & CI:
-    - Docker: docs/compute/docker.md
-    - Kubernetes: docs/compute/kubernetes.md
-    - Helm: docs/compute/helm.md
-    - GitHub Actions: docs/compute/github_actions.md
-    - Git: docs/compute/git.md
-  - System:
-    - ArchLinux: docs/compute/archlinux.md
-    - Debian: docs/compute/debian.md
-    - systemd: docs/compute/systemd.md
-    - Logs: docs/compute/logs.md
-    - Images, videos, PDF: docs/compute/images.md
-  - Network & security:
-    - Network: docs/compute/network.md
-    - DNS: docs/compute/dns.md
-    - SSH: docs/compute/ssh.md
-    - SSL / TLS: docs/compute/ssl.md
-    - PGP / GPG: docs/compute/pgp.md
-  - Data & cloud:
-    - PostgreSQL: docs/compute/postgres.md
-    - MongoDB: docs/compute/mongodb.md
-    - OpenSearch: docs/compute/opensearch.md
-    - AWS S3 CLI: docs/compute/aws_s3_cli.md
+  - SSH: docs/compute/ssh.md
+  - SSL / TLS: docs/compute/ssl.md
+  - systemd: docs/compute/systemd.md
+  - Vim: docs/compute/vim.md
 - Cooking 🇫🇷:
   - docs/cook/index.md
   - Sucré:
@@ -100,6 +97,7 @@ theme:
   - content.code.annotate
   - content.code.copy
   - content.code.select
+  - navigation.expand
   - navigation.footer
   - navigation.indexes
   - navigation.instant

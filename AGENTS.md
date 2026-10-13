@@ -35,8 +35,8 @@ Compute docs are in English. Cooking docs are in French. **Always write in the s
 ### Adding a new page
 
 1. Create the markdown file in the appropriate `src/docs/` subdirectory
-2. Add the page to the `nav:` section in `mkdocs.yml` — it won't appear in navigation otherwise. Recipe groups are sorted alphabetically; compute pages go in the same thematic group as on `src/docs/compute/index.md`
-3. Add it to its section's index page: a card in `src/docs/cook/index.md` (title link plus a one-line summary) or a link in the matching card of `src/docs/compute/index.md`
+2. Add the page to the `nav:` section in `mkdocs.yml` — it won't appear in navigation otherwise. Keep each group sorted alphabetically
+3. Add it to its section's index page: a card in `src/docs/cook/index.md` (title link plus a one-line summary) or a line in the alphabetical list of `src/docs/compute/index.md`
 
 ### Recipe format
 
