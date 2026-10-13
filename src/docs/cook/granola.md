@@ -1,29 +1,34 @@
 ---
-description: "Recette de granola maison : ingrédients et étapes pour un granola croustillant fait maison."
+description: "Recette de granola maison aux noix de pécan, graines et copeaux de coco, sucré au sirop d'érable et relevé à la fleur de sel et à l'huile d'olive."
 ---
 
 # Granola
 
+Pour environ 1 kg de granola. Préparation : 20 min. Cuisson : 40 à 50 min à 150 °C.
+
 ## Ingrédients
 
-| Ingrédient | Quantité |
-|------------|----------|
-| huile (colza ou tournesol) | 160 g |
-| miel liquide | 320 g |
-| lait | 2 cuillères à soupe |
-| flocons d'avoine | 500 g |
-| noix de coco râpée | 100 g |
-| germes de blé | 115 g |
-| graines (courge, sésame, tournesol, lin) | à volonté |
+| Ingrédient | Quantité | Remarque |
+|---|---|---|
+| Flocons d'avoine | 300 g | |
+| Noix de pécan | 150 g | |
+| Graines de tournesol | 140 g | |
+| Graines de courge | 130 g | |
+| Copeaux de noix de coco séchée | 65 g | Non sucrée |
+| Huile d'olive | 12 cl | |
+| Sirop d'érable | 9 cl | |
+| Sucre roux | 80 g | |
+| Fleur de sel | 1 c. à c. | |
 
 ## Étapes
 
-0. Faire chauffer le four (chaleur tournante) à 180°C
-1. Dans un saladier, mélanger les flocons, la noix de coco, les germes de blé, les graines
-2. Porter à ébullition l'huile, le miel et le lait
-3. Verser sur le mélange de graines, bien mélanger
-4. Ajouter une cuillerée à café de sel, mélanger
-5. Laisser refroidir
-6. Sur une plaque allant au four, mettre du papier sulfurisé et y étaler le mélange
-7. Enfourner pour ~25/30min. **Ressortir du four toutes les 5min pour mélanger**
-8. Une fois le mélange bien toasté/doré, vous pouvez y rajouter des noix, des fruits secs etc.
+1. **Préchauffer le four** à 150 °C et tapisser une plaque à pâtisserie de papier sulfurisé.
+2. **Mélanger :** dans un saladier, mélangez bien les flocons d'avoine, les noix de pécan, les graines de tournesol, les graines de courge, les copeaux de coco, l'huile d'olive, le sirop d'érable, le sucre roux et la fleur de sel.
+3. **Étaler** le mélange de manière uniforme sur la plaque.
+4. **Enfourner** 40 à 50 minutes, en remuant avec une cuillère en métal toutes les 10 à 15 minutes. Le mélange doit blondir sans trop colorer : il sera croustillant, avec un bon goût de grillé.
+5. **Laisser refroidir** totalement hors du four.
+
+!!! tip
+    Le granola se conserve plusieurs semaines dans un récipient hermétique.
+
+Recette de Tina Kobakhidze, patronne du Bleuet (coffee shop, Paris 8e).
