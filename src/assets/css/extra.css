@@ -460,3 +460,42 @@
     }
   }
 
+  /* ===========================================================
+     Recipes: ingredient checklist (see assets/js/recipe.js)
+     =========================================================== */
+
+  .md-typeset table[data-ingredients] tbody tr:not(.ingredients__group) {
+    cursor: pointer;
+  }
+
+  .md-typeset table[data-ingredients] tbody tr.ingredients__row--done td {
+    text-decoration: line-through;
+    opacity: 0.45;
+  }
+
+  .md-typeset table[data-ingredients] tbody tr:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: -2px;
+  }
+
+  /* ===========================================================
+     Print: plain page, no background or frosted panels
+     =========================================================== */
+
+  @media print {
+    body {
+      background: none !important;
+    }
+
+    .md-typeset .grid.cards > ul > li,
+    .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
+    .md-nav--secondary .md-nav__title {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .md-typeset table[data-ingredients] tbody tr.ingredients__row--done td {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
