@@ -37,14 +37,35 @@ Compute docs are in English. Cooking docs are in French. **Always write in the s
 
 ### Recipe format
 
-Follow the most recent recipes (e.g. `src/docs/cook/focaccia.md`, `poulet_gaston_gerard.md`); older ones like `brownie.md` predate this format:
+All recipes follow this format (reference: `src/docs/cook/focaccia.md`):
 
 1. Frontmatter with a one-sentence French `description`
-2. `# Title`, then one line with servings and times (préparation, repos/levée, cuisson with temperature in °C)
-3. `## Ingrédients`: a `| Ingrédient | Quantité | Remarque |` table, with bold rows (`| **Pâte** | | |`) to group ingredients. Use metric units and French abbreviations (`c. à s.`, `c. à c.`)
+2. `# Title`, then one line with servings and times, in this order: `Pour 4 personnes. Préparation : 20 min. Repos : 30 min. Cuisson : 25 min à 180 °C.` Only include what is known — never invent servings or durations
+3. `## Ingrédients`: a `| Ingrédient | Quantité | Remarque |` table (`|---|---|---|`, no column padding), with bold rows (`| **Pâte** | | |`) to group ingredients
 4. `## Étapes`: numbered list starting at 1, each step opening with a bold title (`1. **Préchauffer le four** à 200 °C.` or `2. **Former la pâte :** …`)
-5. Optional `!!! tip` admonition for storage, equipment or substitutions
-6. Last line: `[Source : <name>](<url>){target=_blank}`, or plain text when there is no URL
+5. Optional `!!! tip` admonition for storage, equipment, substitutions or variants
+6. Last line: `[Source : <name>](<url>){target=_blank}`, or plain text when there is no URL (`Recette tirée du livre « … ».`)
+
+A page holding several recipes (e.g. `tartiflette.md`) uses one `##` per recipe, followed by its servings line, then `### Ingrédients` and `### Étapes`.
+
+#### Ingredients table
+
+- **Ingrédient** starts with a capital letter and holds only the name (`Huile de noisette`, not `huile de noisette (ou de noix)`); alternatives, preparation and "Facultatif" go in **Remarque** (`Ou huile de noix`, `Hachée`, `Facultatif`)
+- **Quantité** uses metric units (`g`, `kg`, `cl`, `l`, `cm`) and the abbreviations `c. à s.` / `c. à c.` — never `cuillère à soupe`, `cuil.`, `c. à café`. Write numbers as digits (`1 pincée`, not `Une pincée`), ranges with `à` (`2 à 3`, not `2/3`), fractions as `½` / `¼`. For unmeasured amounts use `Au goût`, `Un filet`, `Quelques brins`… — never `-` or an empty cell
+- **Remarque** starts with a capital letter, or is left empty
+- Every listed ingredient must be used in the steps, and vice versa
+
+#### Steps
+
+- The bold title is an infinitive (`**Faire fondre le chocolat**`, `**Cuire la crème :**`); the rest of the step uses the imperative with "vous" (`mélangez`, `faites cuire`). Never mix both in the body
+- Each step is a full sentence ending with a period
+
+#### French typography
+
+- A space before `:`, `;`, `!`, `?` and between a number and its unit (`180 °C`, `20 cm`, `30 min`, `70 %`); ranges and dimensions as `30 à 40 min`, `23 × 33 cm`
+- Proper ligatures and accents: `œuf` (not `oeuf`), capital accents (`À la cuisson`, `Étaler`)
+- Straight apostrophes (`'`), French quotes (`« … »`), plain spaces and hyphens — no non-breaking spaces or special Unicode hyphens
+- Cheese and product names that are common nouns stay lowercase in running text (`saint-nectaire`, `ossau-iraty`, `comté`)
 
 When translating a recipe, convert imperial units (cups, °F, inches) to metric.
 
