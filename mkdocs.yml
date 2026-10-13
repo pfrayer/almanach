@@ -81,6 +81,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/images/favicon.png
   palette:
     primary: orange
@@ -111,6 +112,7 @@ theme:
     repo: fontawesome/brands/github
 
 plugins:
+- meta
 - search:
     lang:
     - en
@@ -132,6 +134,7 @@ extra_css:
 - assets/css/code.css
 
 extra_javascript:
+- assets/js/language.js
 - assets/js/recipe.js
 
 markdown_extensions:

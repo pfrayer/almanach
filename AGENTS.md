@@ -24,6 +24,8 @@ Content lives under `src/` (configured via `docs_dir: src` in `mkdocs.yml`). The
 
 Custom theming uses glassmorphism-style CSS in `src/assets/css/` (backdrop blur, transparent overlays). Fonts are self-hosted under `src/assets/fonts/`.
 
+Theme overrides live in `overrides/` (`custom_dir`): pages under `src/docs/cook/` get a French interface and `<html lang="fr">` through `src/docs/cook/.meta.yml` (`locale: fr`), the rest stays in English. `hooks/recipes.py` marks up recipe pages at build time; `src/assets/js/` holds the small client scripts (language sync on instant navigation, ingredient checklist).
+
 ## Conventions
 
 ### Content language
