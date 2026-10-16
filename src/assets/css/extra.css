@@ -118,9 +118,22 @@
     background-color: hsla(28, 100%, 50%, 0.28);
   }
 
-  .md-content__inner a {
+  /* Links in the text: dark ink with an orange underline. Bold orange text
+     measured ~2:1 on the pale gradient and shouted over the prose. */
+  .md-content__inner.md-typeset a:not(.headerlink, .md-button, .highlight *) {
+    color: var(--md-default-fg-color);
+    font-weight: 500;
     text-decoration: underline;
-    font-weight: bolder;
+    text-decoration-color: hsl(28, 100%, 48%);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.22em;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+
+  .md-content__inner.md-typeset a:not(.headerlink, .md-button, .highlight *):hover,
+  .md-content__inner.md-typeset a:not(.headerlink, .md-button, .highlight *):focus-visible {
+    color: hsl(24, 90%, 32%);
+    text-decoration-color: currentColor;
   }
 
   [data-md-color-scheme="default"] .highlight .p,
