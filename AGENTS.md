@@ -11,7 +11,7 @@ mkdocs build --strict -f mkdocs.yml -d site
 docker build -t almanach . && docker run --rm -p 8181:8181 almanach
 ```
 
-There are no tests or linters configured: `mkdocs build --strict` is the only gate.
+There are no tests or linters: `mkdocs build --strict` is the gate, run by CI (`.github/workflows/ci.yml`) on every PR and on `master`, along with a `docker build`.
 
 ## Architecture
 
@@ -94,8 +94,8 @@ Per `.editorconfig`: UTF-8, LF line endings, trailing whitespace trimmed, 4-spac
 
 ### Deployment
 
-Pushes to `master` trigger a GitHub Actions workflow that deploys via SSH. There is no build step in CI — the remote host builds the site.
+This repo does not deploy itself. It is a submodule of [pfrayer/pateenchroot](https://github.com/pfrayer/pateenchroot): Renovate there opens a PR bumping the `almanach` pointer, its CI builds the site and tests the whole stack, and merging that PR deploys to the VPS. A change merged here goes live only once that bump is merged.
 
 ### Dependencies
 
-Renovate is configured to auto-update minor and patch versions only (majors are disabled).
+Renovate (`config:recommended`, images and actions pinned by digest) opens PRs for every update, majors included; nothing is automerged, CI must be green before merging. Bump related packages together when one requires the other (e.g. `mkdocs-material` and `pymdown-extensions`).
