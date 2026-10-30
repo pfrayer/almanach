@@ -1,4 +1,4 @@
-FROM python:3.15-trixie
+FROM python:3.15-trixie@sha256:f34e3385a59fd8de7919d46db4a38ab14c0e46928a11b59036a7ee206ac0c129
 
 WORKDIR /docs
 COPY . /docs/
