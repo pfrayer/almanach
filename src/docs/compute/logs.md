@@ -6,7 +6,7 @@ description: "Log analysis cheatsheet: journalctl, tail and follow, grep/awk, JS
 
 ## journalctl
 
-→ See [systemd — journalctl](systemd.md#journalctl----logs)
+→ See [systemd — journalctl](systemd.md#journalctl-logs)
 
 ---
 
