@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdocs build *)",
+      "Bash(python3 -I .claude/hooks/lint-recipe.py *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/lint-recipe.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/build-on-stop.sh",
+            "timeout": 120,
+            "statusMessage": "mkdocs build --strict..."
+          }
+        ]
+      }
+    ]
+  }
+}
