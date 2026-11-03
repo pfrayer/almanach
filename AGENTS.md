@@ -11,7 +11,9 @@ mkdocs build --strict -f mkdocs.yml -d site
 docker build -t almanach . && docker run --rm -p 8181:8181 almanach
 ```
 
-There are no tests or linters: `mkdocs build --strict` is the gate, run by CI (`.github/workflows/ci.yml`) on every PR and on `master`, along with a `docker build`.
+There are no tests: `mkdocs build --strict` is the gate, run by CI (`.github/workflows/ci.yml`) on every PR and on `master`, along with a `docker build`. Do not add `-q` to it: it hides the warnings that `--strict` turns into failures.
+
+`python3 -I .claude/hooks/lint-recipe.py <files>` checks the mechanical recipe rules below (ligatures, spoon abbreviations, units, special characters, table shape, nav and index registration). Claude Code runs it after each edit of a cooking page and `mkdocs build --strict` when it stops (`.claude/settings.json`); the `add-recipe` skill and the `recipe-reviewer` agent cover the rest of the recipe workflow.
 
 ## Architecture
 
