@@ -55,6 +55,10 @@ hide:
 
     Rôties puis laquées, sur un lit de riz.
 
+-   [**Carbonade flamande**](carbonade_flamande.md)
+
+    Bœuf mijoté à la bière brune et au pain d'épices.
+
 -   [**Focaccia**](focaccia.md)
 
     Sans pétrissage, levée au frigo, beurre à l'ail.
