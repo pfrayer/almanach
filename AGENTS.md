@@ -100,4 +100,4 @@ This repo does not deploy itself. It is a submodule of [pfrayer/pateenchroot](ht
 
 ### Dependencies
 
-Renovate (`config:recommended`; GitHub Actions pinned by digest, Docker images by version tag only) opens PRs for every update, majors included; nothing is automerged, CI must be green before merging. Bump related packages together when one requires the other (e.g. `mkdocs-material` and `pymdown-extensions`).
+Renovate (`config:recommended`; GitHub Actions pinned by digest, Docker images by version tag only) opens PRs for every update, majors included, early on Mondays (Paris time): one `mkdocs` PR for all the pip packages, majors included, so they move together, and one for the GitHub Actions; nothing is automerged, CI must be green before merging. Bump related packages together when one requires the other (e.g. `mkdocs-material` and `pymdown-extensions`); each merge here ends up as a deploy, which is why updates are grouped.
