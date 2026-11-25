@@ -17,10 +17,11 @@ There are no tests: `mkdocs build --strict` is the gate, run by CI (`.github/wor
 
 ## Architecture
 
-This is a **Material for MkDocs** documentation site ("Compute & Cook") serving two categories of cheatsheets:
+This is a **Material for MkDocs** documentation site ("Compute & Cook") serving three sections:
 
 - **Computers** (`src/docs/compute/`) — Technical cheatsheets written in **English**
 - **Cooking** (`src/docs/cook/`) — Recipes written in **French**
+- **Lectures** (`src/docs/books/`) — A single page in **French**: a "À lire" table, then one table per year of books read (most recent first). A finished book moves from "À lire" to its year's table
 
 Content lives under `src/` (configured via `docs_dir: src` in `mkdocs.yml`). The site navigation is manually defined in `mkdocs.yml` under `nav:` — new pages must be added there to appear.
 
