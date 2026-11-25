@@ -97,7 +97,7 @@ Per `.editorconfig`: UTF-8, LF line endings, trailing whitespace trimmed, 4-spac
 
 ### Deployment
 
-This repo does not deploy itself. It is a submodule of [pfrayer/pateenchroot](https://github.com/pfrayer/pateenchroot): Renovate there opens a PR bumping the `almanach` pointer, its CI builds the site and tests the whole stack, and merging that PR deploys to the VPS. A change merged here goes live only once that bump is merged.
+This repo does not deploy itself. It is a submodule of [pfrayer/pateenchroot](https://github.com/pfrayer/pateenchroot): once `master` is green here, the `deploy` job of CI dispatches `sync-submodules.yml` there (secret `PATEENCHROOT_DISPATCH_TOKEN`), which pushes the new `almanach` pointer to its `master`; its CI builds the site, tests the whole stack and deploys to the VPS, within minutes. A red pateenchroot CI deploys nothing and notifies.
 
 ### Dependencies
 
