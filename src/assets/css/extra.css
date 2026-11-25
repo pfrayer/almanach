@@ -278,9 +278,9 @@
 
   .home-doors {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
     gap: 1.25rem;
-    max-width: 34rem;
+    max-width: 48rem;
     margin: 0 auto 4rem;
   }
 

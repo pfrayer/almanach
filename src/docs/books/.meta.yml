@@ -1,0 +1,3 @@
+# Front matter applied to every page under docs/books/ (Material's meta plugin):
+# French interface, like docs/cook/.
+locale: fr

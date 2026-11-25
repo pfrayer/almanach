@@ -81,6 +81,7 @@ nav:
     - Pâte brisée: docs/cook/pates/brisee.md
     - Pâte feuilletée: docs/cook/pates/feuilletee.md
     - Pâte sablée: docs/cook/pates/sablee.md
+- Lectures 🇫🇷: docs/books/index.md
 
 theme:
   name: material

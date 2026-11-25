@@ -22,4 +22,8 @@ hide:
     <span class="home-door__icon" aria-hidden="true">🍳</span>
     <span class="home-door__title">Cooking <span class="home-door__flag">🇫🇷</span></span>
   </a>
+  <a class="home-door" href="docs/books/">
+    <span class="home-door__icon" aria-hidden="true">📚</span>
+    <span class="home-door__title">Lectures <span class="home-door__flag">🇫🇷</span></span>
+  </a>
 </nav>
